@@ -1,5 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Yantramanav:wght@100;300;400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Yantramanav:wght@100;300;400;500;700;900&display=swap");
 
 // font-family: 'Gochi Hand', cursive;
 // font-family: 'Roboto', sans-serif;
 // font-family: 'Yantramanav', sans-serif;
+
+#featured {
+  .featured-container {
+    .row {
+      .product-card {
+        span {
+          font-size: 48px;
+          font-family: "Gochi Hand", cursive;
+          text-transform: capitalize;
+        }
+        #featured-text {
+          color: white;
+        }
+        .product-card-details {
+        font-family: 'Roboto', sans-serif;
+          .product-detail-content {
+            font-size: 11px;
+            color: #5a5a5a;
+            .product-detail-title {
+              font-size: 17px;
+              color: black;
+            }
+            
+          }
+          p{
+            font-size: 34px;
+            font-weight: 900;
+        }
+        }
+      }
+    }
+  }
+}

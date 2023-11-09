@@ -1,0 +1,98 @@
+#featured {
+  .featured-container {
+    padding: 120px 80px;
+    .row {
+      .product-card {
+        padding: 0;
+        position: relative;
+        span {
+          position: absolute;
+          top: 25px;
+          left: 45px;
+        }
+        img{
+            width: 100%;
+        }
+        .add-to-basket-button{
+                position: absolute;
+                width: 55px;
+                height: 55px;
+                border-radius: 50%;
+                background-color: white;
+                border: none;
+                cursor: pointer;
+                z-index: 10;
+                bottom: 45px;
+                right: 45px;
+                transition: 0.4s ease-in;
+        }
+        .add-to-basket-button:hover{
+                fill: white;
+                background-color: black;
+        }
+        .product-card-details{
+            transform: scaleY(0);
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            max-width: 65%;
+            max-height: 65%;
+            bottom: 35px;
+            right: 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: white;
+            padding: 30px;
+            transform-origin: bottom;
+            transition: 0.4s;
+            .product-detail-content{
+                display: flex;
+                flex-direction: column;
+            }
+            p{
+                margin: 0;
+            }
+            .add-to-fav-button{
+                position: absolute;
+                    width: 55px;
+                    height: 55px;
+                    border-radius: 50%;
+                    background-color: white;
+                    border: none;
+                    cursor: pointer;
+                    z-index: 10;
+                    top: 15px;
+                    right: 15px;
+                    transition: 0.4s ease-in;
+            }
+            .add-to-fav-button:hover{
+                fill: white;
+                background-color: black;
+        }
+        }
+        
+      }
+      .product-card:hover .product-card-details{
+        transform: scaleY(1);
+      }
+    }
+  }
+}
+
+@media screen and (max-width:480px) {
+    #featured{
+        .featured-container{
+            .row{
+                .product-card{
+                    .product-card-details{
+                        max-width: 100%;
+                        max-height: 100% ;
+                        top: 0;
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
