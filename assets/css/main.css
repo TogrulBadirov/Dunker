@@ -26,11 +26,6 @@ ol {
   margin: 0;
 }
 
-::-moz-selection {
-  background-color: #000;
-  color: #fff;
-}
-
 ::selection {
   background-color: #000;
   color: #fff;
@@ -49,4 +44,74 @@ ol {
 .custom-button:hover {
   background-color: #000;
   color: #fff;
+}
+
+#street-vibe {
+  background-image: url("https://dunker.qodeinteractive.com/wp-content/uploads/2023/01/h1-parallax-img-001.jpg");
+  min-height: 700px;
+  background-position: center;
+  background-size: cover;
+  min-height: 700px;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  max-width: 100%;
+}
+#street-vibe .street-title {
+  margin-left: 850px;
+  display: block;
+  width: 366px;
+}
+#street-vibe .street-title h2 {
+  font-weight: 700;
+  color: black;
+  font-size: 60px;
+}
+#street-vibe .street-title span {
+  font-family: sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: gray;
+}
+#street-vibe .street-title .custom-button {
+  margin-top: 20px;
+  display: inline-block;
+}
+
+#elementor-section {
+  border-collapse: collapse;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+}
+#elementor-section div {
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  transition: 0.3s;
+}
+#elementor-section div:hover {
+  border: 1px solid black;
+}
+
+#content-section {
+  padding: 20px 130px;
+}
+#content-section .content-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#content-section .content-bottom .services {
+  display: flex;
+  align-items: center;
+  width: 290px;
+}
+#content-section .content-bottom .services div {
+  padding: 0 30px;
+}
+#content-section .content-bottom .services span {
+  font-weight: 600;
+  font-size: 17px;
 }/*# sourceMappingURL=main.css.map */
