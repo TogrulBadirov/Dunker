@@ -1,3 +1,4 @@
+// featured section start
 #featured {
   .featured-container {
     padding: 120px 70px 0 70px;
@@ -10,92 +11,90 @@
           top: 25px;
           left: 45px;
         }
-        img{
-            width: 100%;
+        img {
+          width: 100%;
         }
-        .add-to-basket-button{
-                bottom: 45px;
-                right: 45px;
+        .add-to-basket-button {
+          bottom: 45px;
+          right: 45px;
         }
-        .product-card-details{
-            transform: scaleY(0);
-            position: absolute;
-            width: 350px;
-            height: 350px;
-            max-width: 65%;
-            max-height: 65%;
-            bottom: 35px;
-            right: 35px;
+        .product-card-details {
+          transform: scaleY(0);
+          position: absolute;
+          width: 350px;
+          height: 350px;
+          max-width: 65%;
+          max-height: 65%;
+          bottom: 35px;
+          right: 35px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          background-color: white;
+          padding: 30px;
+          transform-origin: bottom;
+          transition: 0.4s;
+          .product-detail-content {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            background-color: white;
-            padding: 30px;
-            transform-origin: bottom;
-            transition: 0.4s;
-            .product-detail-content{
-                display: flex;
-                flex-direction: column;
-            }
-            p{
-                margin: 0;
-            }
-            .add-to-fav-button{
-                    top: 15px;
-                    right: 15px;
-            }
+          }
+          p {
+            margin: 0;
+          }
+          .add-to-fav-button {
+            top: 15px;
+            right: 15px;
+          }
         }
-        
       }
-      .product-card:hover .product-card-details{
+      .product-card:hover .product-card-details {
         transform: scaleY(1);
       }
     }
   }
 }
 
-@media screen and (max-width:480px) {
-    #featured{
-        .featured-container{
-            .row{
-                .product-card{
-                    .product-card-details{
-                        max-width: 100%;
-                        max-height: 100% ;
-                        top: 0;
-                        left: 0;
-                    }
-                }
-            }
-        }
-    }
-}
 
-#featured-products{
+@media screen and (max-width: 480px) {
+  #featured {
+    .featured-container {
+      .row {
+        .product-card {
+          .product-card-details {
+            max-width: 100%;
+            max-height: 100%;
+            top: 0;
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+// featured section end
+
+// featured-products section start 
+#featured-products {
   padding: 120px 70px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  // .featured-products-content{
-  //   text-align: center;
-  //   text-transform: uppercase;
-  // }
-  .featured-products-content{
-    h2{
+  .featured-products-content {
+    h2 {
       padding-bottom: 20px;
     }
   }
-  .featured-products-filter{
+  .featured-products-filter {
     display: flex;
     gap: 32px;
     margin-bottom: 35px;
-    button{
+    button {
       border: none;
       background: transparent;
       position: relative;
     }
-    button::after{
-      content: '';
+    button::after {
+      content: "";
       height: 2px;
       background-color: black;
       width: 0;
@@ -104,13 +103,12 @@
       left: 0;
       transition: 0.3s;
     }
-    button:hover::after{
+    button:hover::after {
       width: 100%;
     }
   }
-  .featured-products-container{ 
-    .featured-products-card{
-      // margin: 0 auto;
+  .featured-products-container {
+    .featured-products-card {
       position: relative;
       box-sizing: border-box;
       max-width: 350px;
@@ -120,36 +118,34 @@
       transition: outline 0.35s ease-in;
       padding: 65px 35px 25px;
       cursor: pointer;
-      .new-product-icon{
+      .new-product-icon {
         top: 35px;
         left: 35px;
       }
-      .sale-product-icon{
+      .sale-product-icon {
         top: 35px;
         left: 35px;
       }
-      .swiper-button-next::after, .swiper-button-prev::after{
+      .swiper-button-next::after,
+      .swiper-button-prev::after {
         color: black;
         font-size: 14px;
         opacity: 0;
         transition: 0.2s;
       }
-      .add-to-fav-button{
+      .add-to-fav-button {
         top: 15px;
         right: 15px;
       }
-      .add-to-basket-button{
+      .add-to-basket-button {
         bottom: 15px;
         right: 15px;
       }
       .swiper {
-        // max-width: 520px;
-        height: 380px; 
-        // border: 1px solid;
+        height: 380px;
         display: block;
-        // overflow: hidden;
       }
-  
+
       .swiper-slide {
         text-align: center;
         font-size: 18px;
@@ -158,39 +154,36 @@
         justify-content: center;
         align-items: center;
       }
-  
+
       .swiper-slide img {
         display: block;
         max-width: 290px;
-        // height: 400px;
         object-fit: cover;
       }
-  
-      // .swiper {
-      //   margin-left: auto;
-      //   margin-right: auto;
-      // }
-      .product-card-content{
+
+
+      .product-card-content {
         display: flex;
         flex-direction: column;
-        .product-title{
+        .product-title {
           padding-top: 8px;
         }
-        span{
+        span {
           padding-top: 8px;
         }
       }
     }
-    .featured-products-card:hover{
+    .featured-products-card:hover {
       border-color: black;
       outline: 1px solid black;
       z-index: 3;
-      .swiper-button-next::after, .swiper-button-prev::after{
+      .swiper-button-next::after,
+      .swiper-button-prev::after {
         color: black;
         font-size: 14px;
         opacity: 1;
       }
     }
-    
   }
 }
+// featured-products section end 
