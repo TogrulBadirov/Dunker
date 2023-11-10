@@ -1,6 +1,6 @@
 #featured {
   .featured-container {
-    padding: 120px 80px;
+    padding: 120px 70px 0 70px;
     .row {
       .product-card {
         padding: 0;
@@ -14,21 +14,8 @@
             width: 100%;
         }
         .add-to-basket-button{
-                position: absolute;
-                width: 55px;
-                height: 55px;
-                border-radius: 50%;
-                background-color: white;
-                border: none;
-                cursor: pointer;
-                z-index: 10;
                 bottom: 45px;
                 right: 45px;
-                transition: 0.4s ease-in;
-        }
-        .add-to-basket-button:hover{
-                fill: white;
-                background-color: black;
         }
         .product-card-details{
             transform: scaleY(0);
@@ -54,22 +41,9 @@
                 margin: 0;
             }
             .add-to-fav-button{
-                position: absolute;
-                    width: 55px;
-                    height: 55px;
-                    border-radius: 50%;
-                    background-color: white;
-                    border: none;
-                    cursor: pointer;
-                    z-index: 10;
                     top: 15px;
                     right: 15px;
-                    transition: 0.4s ease-in;
             }
-            .add-to-fav-button:hover{
-                fill: white;
-                background-color: black;
-        }
         }
         
       }
@@ -95,4 +69,128 @@
             }
         }
     }
+}
+
+#featured-products{
+  padding: 120px 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // .featured-products-content{
+  //   text-align: center;
+  //   text-transform: uppercase;
+  // }
+  .featured-products-content{
+    h2{
+      padding-bottom: 20px;
+    }
+  }
+  .featured-products-filter{
+    display: flex;
+    gap: 32px;
+    margin-bottom: 35px;
+    button{
+      border: none;
+      background: transparent;
+      position: relative;
+    }
+    button::after{
+      content: '';
+      height: 2px;
+      background-color: black;
+      width: 0;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transition: 0.3s;
+    }
+    button:hover::after{
+      width: 100%;
+    }
+  }
+  .featured-products-container{ 
+    .featured-products-card{
+      // margin: 0 auto;
+      position: relative;
+      box-sizing: border-box;
+      max-width: 350px;
+      max-height: 600px;
+      border: 1px solid #cacaca;
+      outline: 1px solid transparent;
+      transition: outline 0.35s ease-in;
+      padding: 65px 35px 25px;
+      cursor: pointer;
+      .new-product-icon{
+        top: 35px;
+        left: 35px;
+      }
+      .sale-product-icon{
+        top: 35px;
+        left: 35px;
+      }
+      .swiper-button-next::after, .swiper-button-prev::after{
+        color: black;
+        font-size: 14px;
+        opacity: 0;
+        transition: 0.2s;
+      }
+      .add-to-fav-button{
+        top: 15px;
+        right: 15px;
+      }
+      .add-to-basket-button{
+        bottom: 15px;
+        right: 15px;
+      }
+      .swiper {
+        // max-width: 520px;
+        height: 380px; 
+        // border: 1px solid;
+        display: block;
+        // overflow: hidden;
+      }
+  
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+  
+      .swiper-slide img {
+        display: block;
+        max-width: 290px;
+        // height: 400px;
+        object-fit: cover;
+      }
+  
+      // .swiper {
+      //   margin-left: auto;
+      //   margin-right: auto;
+      // }
+      .product-card-content{
+        display: flex;
+        flex-direction: column;
+        .product-title{
+          padding-top: 8px;
+        }
+        span{
+          padding-top: 8px;
+        }
+      }
+    }
+    .featured-products-card:hover{
+      border-color: black;
+      outline: 1px solid black;
+      z-index: 3;
+      .swiper-button-next::after, .swiper-button-prev::after{
+        color: black;
+        font-size: 14px;
+        opacity: 1;
+      }
+    }
+    
+  }
 }

@@ -11,3 +11,63 @@
     background-color: #000;
     color: #fff;
 }
+
+.add-to-basket-button{
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.4s ease-in;
+}
+.add-to-basket-button:hover{
+    fill: white;
+    background-color: black;
+}
+
+.add-to-fav-button{
+    position: absolute;
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        background-color: white;
+        border: none;
+        cursor: pointer;
+        z-index: 10;
+        transition: 0.4s ease-in;
+}
+.add-to-fav-button:hover{
+    fill: white;
+    background-color: black;
+}
+
+.new-product-icon{
+    position: absolute;
+    width: 35px;
+    height: 15px;
+    border-radius: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: black;
+    color: white;
+    cursor: text;
+    z-index: 10;
+    font-size: 9px;
+  }
+
+.sale-product-icon{
+    position: absolute;
+    width: 35px;
+    height: 15px;
+    border-radius: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #eeedeb;
+    color: black;
+    cursor: text;
+    z-index: 10;
+    font-size: 9px;
+}
