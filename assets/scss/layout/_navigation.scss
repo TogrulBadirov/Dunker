@@ -1,0 +1,367 @@
+#nav {
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+  transition: all 0.3s ease-in;
+  &.sticky {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    transition: all 0.3s ease-in;
+    animation: fadeInDown 0.5s ease-in-out;
+  }
+
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .leftside-nav {
+      .logo {
+        width: 75%;
+        padding-left: 17px;
+        img {
+          object-fit: cover;
+        }
+      }
+    }
+    .middle-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .navbar-items {
+        display: flex;
+        justify-content: center;
+        gap: 35px;
+        align-items: center;
+        .navbar-item {
+          position: relative;
+          font-weight: 900;
+          .navbar-link {
+            line-height: 100px;
+            position: relative;
+            transition: all 0.3s ease-in;
+            &::before {
+              content: '';
+              position: absolute;
+              top: 100%;
+              left: 0;
+              right: 0;
+              height: 2px;
+              background-color: #000;
+              transform-origin: right;
+              transform: scaleX(0);
+              transition: transform 0.3s ease;
+            }
+            &.active::before {
+              content: '';
+              position: absolute;
+              top: 60%;
+              height: 2px;
+              background: #000;
+              transform: scaleX(1);
+            }
+            &:hover::before {
+              transform-origin: left;
+              transform: scaleX(1);
+            }
+          }
+          .subMenu {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 80px;
+            transition: all 0.3s ease;
+            visibility: hidden;
+            opacity: 0;
+            background: #fff;
+            width: 240px;
+            padding: 28px 0px 5px 15px;
+            font-size: 15px;
+            .subMenu-item {
+              padding-bottom: 15px;
+            }
+            .subMenu-link {
+              position: relative;
+              padding-bottom: 10px;
+              transition: all 0.3s ease-in;
+              &::before {
+                content: '';
+                position: absolute;
+                top: 70%;
+                left: 0;
+                right: 0;
+                height: 2px;
+                background-color: #000;
+                transform-origin: right;
+                transform: scaleX(0);
+                transition: transform 0.3s ease;
+              }
+              &:hover::before {
+                transform-origin: left;
+                transform: scaleX(1);
+                transition: transform 0.3s ease;
+              }
+            }
+          }
+        }
+        .multiple {
+          position: absolute;
+          left: -300px;
+          padding: 40px 0;
+          visibility: hidden;
+          opacity: 0;
+          transition: all 0.3s ease-in;
+          background: #fff;
+          .multiple-subMenu {
+            display: flex;
+            justify-content: center;
+            background: #fff;
+            .multiple-subMenu-items {
+              padding: 30px 50px;
+              width: 100%;
+              span {
+                color: #727272;
+                font-size: 10px;
+              }
+              .multiple-subMenu-item {
+                .multiple-item {
+                  white-space: nowrap;
+                  padding: 7px 0;
+                }
+              }
+            }
+          }
+        }
+        .navbar-item:hover {
+          .multiple {
+            visibility: visible;
+            opacity: 1;
+            transition: all 0.3s ease-in;
+            .multiple-link {
+              position: relative;
+              &::before {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                height: 2px;
+                background-color: #000;
+                transform-origin: right;
+                transform: scaleX(0);
+                transition: transform 0.3s ease;
+              }
+              &:hover::before {
+                transform-origin: left;
+                transform: scaleX(1);
+              }
+            }
+          }
+        }
+        .navbar-item:hover {
+          .subMenu {
+            visibility: visible;
+            opacity: 1;
+            transition: all 0.3s ease;
+          }
+        }
+      }
+    }
+    .rightside-nav {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      .action-icons {
+        display: flex;
+        align-items: center;
+        font-size: 18px;
+        font-weight: 900;
+        span {
+          padding-right: 25px;
+        }
+      }
+      .basket {
+        background-color: #000;
+        min-height: 100%;
+        padding: 39px 40px;
+        color: white;
+      }
+    }
+  }
+}
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-header-top {
+  .menu-btn {
+    background: #fff;
+    padding: 12px 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .menu-btn__burger {
+    width: 20px;
+    height: 2px;
+    background: #000;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+    transition: all 0.3s ease;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 2px;
+      background: #000;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+      transition: all 0.3s ease;
+      transform: translateY(-8px);
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 2px;
+      background: #000;
+
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+      transition: all 0.3s ease;
+      transform: translateY(8px);
+    }
+  }
+  .menu-btn.open {
+    .menu-btn__burger {
+      background: transparent;
+      box-shadow: none;
+      &::before {
+        transform: rotate(45deg);
+      }
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+  .mobile-nav-container {
+    position: relative;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    .dark-logo {
+      width: 100px;
+      min-height: 100%;
+      img {
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+    .mobile-nav-actions {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+  }
+}
+
+#mobile-nav {
+  visibility: hidden;
+  width: 100%;
+  opacity: 0;
+  position: absolute;
+  background: #fff;
+  z-index: 2;
+  padding: 0 30px;
+  transform: scaleY(0);
+  transform-origin: top center;
+  transition: all 0.3s ease;
+  &.active {
+    width: 100%;
+    visibility: visible;
+    transform-origin: top center;
+    opacity: 1;
+    transform: scaleY(1);
+    transition: all 0.3s ease;
+  }
+  .mobile-navbar-items {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    padding: 34px 0;
+
+    .mobile-navbar-item {
+      position: relative;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      padding: 7px 0;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+
+      .mobile-subMenu-items {
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        opacity: 0;
+        visibility: hidden;
+        .mobile-subMenu-item {
+          padding: 6px 0 7px;
+        }
+      }
+    }
+
+    .mobile-navbar-link {
+      transition: all 0.3s ease;
+      position: relative;
+
+      .right-chevron {
+        position: absolute;
+        transform: rotate(0deg);
+        transition: all 0.3s;
+        right: 4px;
+      }
+    }
+
+    .mobile-subMenu-item {
+      position: relative;
+      .mobile-subMenu-link {
+        transition: all 0.3s ease;
+        .right-chevron {
+          position: absolute;
+          transform: rotate(0deg);
+          transition: all 0.3s;
+          right: 4px;
+        }
+      }
+    }
+
+    .mobile-navbar-item.active {
+      .mobile-subMenu-items {
+        max-height: 500px;
+        transition: all 0.3s ease;
+        padding: 0 15px 15px 15px;
+        opacity: 1;
+        visibility: visible;
+      }
+      .right-chevron {
+        transform: rotate(90deg);
+        transition: all 0.3s ease;
+      }
+    }
+  }
+}
