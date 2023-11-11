@@ -1,8 +1,10 @@
 @import './base/reset.scss';
 @import './base/typography.scss';
 
+@import './components/sidebars';
 @import './components/buttons.scss';
 @import './components/carousel.scss';
+@import './components/title.scss';
 
 @import './layout/footer.scss';
 @import './layout/header.scss';

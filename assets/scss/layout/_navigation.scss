@@ -10,6 +10,7 @@
     width: 100%;
     background: #fff;
     transition: all 0.3s ease-in;
+    z-index: 11;
     animation: fadeInDown 0.5s ease-in-out;
   }
 
@@ -187,6 +188,7 @@
         min-height: 100%;
         padding: 39px 40px;
         color: white;
+        cursor: pointer;
       }
     }
   }
@@ -272,6 +274,10 @@
       display: flex;
       align-items: center;
       gap: 18px;
+      line-height: 40px;
+      .basket-icon {
+        cursor: pointer;
+      }
     }
   }
 }
