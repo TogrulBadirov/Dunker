@@ -1,0 +1,137 @@
+{
+  "products": [
+    {
+        "id": 1,
+        "title": "white shirt",
+        "image": [
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-filter-1-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-filter-8-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-filter-9-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-filter-10-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-filter-11-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-filter-12-800x975.jpg"
+        ],
+        "brend": "kickz",
+        "category": "fitness",
+        "price": 45,
+        "status": null
+    },
+    {
+        "id": 2,
+        "title": "black nike",
+        "image": [
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-01-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-2-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-3-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-4-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-5-800x975.jpg"
+        ],
+        "brend": "new balance",
+        "category": "fitness",
+        "price": 75,
+        "status": "new"
+    },
+    {
+        "id": 3,
+        "title": "yellow coat",
+        "image": [
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/grouped-product-photo-3-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/grouped-product-photo-5-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/grouped-product-photo-6-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/grouped-product-photo-7-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/grouped-product-photo-8-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/grouped-product-photo-13-800x975.jpg"
+        ],
+        "brend": "rang",
+        "category": "winter",
+        "price": 120,
+        "status": null
+    },
+    {
+        "id": 4,
+        "title": "sport bag",
+        "image": [
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-6-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-7-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-8-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-9-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-10-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-11-800x975.jpg"
+        ],
+        "brend": "adidas",
+        "category": "cycling",
+        "price": 120,
+        "status": "sale",
+        "discount":20
+    },
+    {
+        "id": 5,
+        "title": "running jacket",
+        "image": [
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-35-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-36-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-37-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-38-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-40-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-41-800x975.jpg"
+        ],
+        "brend": "nike",
+        "category": "winter",
+        "price": 100,
+        "status": "sale",
+        "discount":15
+    },
+    {
+        "id": 6,
+        "title": "training shirt",
+        "image": [
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-single-3-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-single-1-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-single-2-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-single-4-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-single-5-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-single-6-800x975.jpg"
+        ],
+        "brend": "adidas",
+        "category": "fitness",
+        "price": 50,
+        "status": null
+    },
+    {
+        "id": 7,
+        "title": "cool hat",
+        "image": [
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-12-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-13-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-14-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-15-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-16-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-16a-800x975.jpg"
+        ],
+        "brend": "kickz",
+        "category": "fitness",
+        "price": 35,
+        "status": null
+    },
+    {
+        "id": 8,
+        "title": "hoodie",
+        "image": [
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-17-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-18-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-19-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-20-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-21-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-22-800x975.jpg"
+        ],
+        "brend": "puma",
+        "category": "winter",
+        "price": 75,
+        "status": "sold"
+    }
+  ],
+  "comments": [
+    { "id": 1, "body": "some comment", "postId": 1 }
+  ],
+  "profile": { "name": "typicode" }
+}
