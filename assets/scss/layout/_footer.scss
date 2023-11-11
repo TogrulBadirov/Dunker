@@ -1,0 +1,100 @@
+#footer {
+  .top-footer {
+    border-bottom: 1px solid #ccc;
+    .footer-items {
+      padding: 66px 0;
+      color: #000;
+      font-weight: 700;
+      .footer-item {
+        font-size: 12px;
+        padding: 8px 0;
+        .footer-link {
+          position: relative;
+          top: 0;
+          left: 0;
+          &::before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: #000;
+            transform-origin: right;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+          }
+          &:hover::before {
+            transform-origin: left;
+            transform: scaleX(1);
+          }
+        }
+      }
+    }
+  }
+  .middle-footer {
+    padding: 66px 0 69px;
+    .footer-form {
+      p {
+        max-width: 40%;
+      }
+      .form-email {
+        position: relative;
+        top: 0;
+        bottom: 0;
+        .send-email {
+          padding: 8px 0;
+          width: 50%;
+          outline: none;
+          border: none;
+          border-bottom: 2px solid #000;
+          &::placeholder {
+            font-weight: 700;
+            font-size: 13px;
+            color: #ccc;
+            transition: 0.4s;
+          }
+          &:focus::placeholder {
+            color: #000;
+            font-weight: 700;
+            font-size: 13px;
+            transition: 0.4s;
+          }
+        }
+        .arrow-right {
+          position: absolute;
+          top: 0;
+          left: 48%;
+        }
+      }
+    }
+    .location {
+      h5 {
+        font-weight: 700;
+        font-size: 17px;
+      }
+      address {
+        a {
+          font-size: 13px;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+  .bottom-footer {
+    background: url('https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/Footer-bg-img-1.jpg');
+    background-repeat: no-repeat;
+    .copyright {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+    span {
+      color: #727272;
+    }
+  }
+  .footer-heading {
+    padding-bottom: 8px;
+    font-size: 17px;
+    font-weight: 700;
+  }
+}

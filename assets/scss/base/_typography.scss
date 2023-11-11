@@ -4,6 +4,9 @@
 // font-family: 'Roboto', sans-serif;
 // font-family: 'Yantramanav', sans-serif;
 
+
+
+
 // featured section start
 #featured {
   .featured-container {
@@ -93,3 +96,36 @@
   }
 }
 // featured-products section end 
+
+
+// trending section start 
+#trending {
+  font-family: 'Roboto', sans-serif;
+  .featured-products-container {
+    .product-card-content {
+      a {
+        color: #727272;
+        font-size: 11px;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+      .product-title {
+        font-family: 'Yantramanav', sans-serif;
+        font-size: 17px;
+        color: black;
+        font-weight: 600;
+      }
+      .product-category {
+        font-size: 14px;
+        text-transform: capitalize;
+        font-weight: initial;
+      }
+      span {
+        font-family: 'Yantramanav', sans-serif;
+        font-size: 14px;
+        font-weight: 800;
+      }
+    }
+  }
+}
+// trending section end 

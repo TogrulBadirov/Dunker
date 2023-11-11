@@ -187,3 +187,119 @@
   }
 }
 // featured-products section end 
+// Trending Start
+#trending {
+  padding: 120px 70px;
+
+  .featured-products-container {
+    .featured-products-card {
+      position: relative;
+      box-sizing: border-box;
+      border: 1px solid #cacaca;
+      outline: 1px solid transparent;
+      transition: outline 0.35s ease-in;
+      padding: 65px 35px 25px;
+      cursor: pointer;
+      .new-product-icon {
+        top: 35px;
+        left: 35px;
+      }
+      .sale-product-icon {
+        top: 35px;
+        left: 35px;
+      }
+      .swiper-button-next::after,
+      .swiper-button-prev::after {
+        color: black;
+        font-size: 14px;
+        opacity: 0;
+        transition: 0.2s;
+      }
+      .add-to-fav-button {
+        top: 15px;
+        right: 15px;
+      }
+      .add-to-basket-button {
+        bottom: 15px;
+        right: 15px;
+      }
+      .swiper {
+        height: 380px;
+        display: block;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: auto;
+        object-fit: cover;
+      }
+
+      .product-card-content {
+        display: flex;
+        flex-direction: column;
+        .product-title {
+          padding-top: 8px;
+        }
+        span {
+          padding-top: 8px;
+        }
+      }
+    }
+    .featured-products-card:nth-child(3) {
+      background-color: #eeedeb;
+      .swiper-slide {
+        background-color: #eeedeb;
+      }
+    }
+    .featured-products-card:nth-child(4) {
+      .swiper-slide {
+        background-color: #000;
+      }
+      background-color: #000;
+      a,
+      span {
+        color: #fff;
+      }
+    }
+    .featured-products-card:hover {
+      border-color: black;
+      outline: 1px solid black;
+      z-index: 3;
+      .swiper-button-next::after,
+      .swiper-button-prev::after {
+        color: black;
+        font-size: 14px;
+        opacity: 1;
+      }
+    }
+  }
+}
+// Trending End
+
+// Categories Slider Start
+#categories-slider {
+  background: #161616;
+  padding: 119px 25px 120px 25px;
+  .swiper-slide {
+    width: 120px;
+    margin-right: 65px;
+    .category-element {
+      text-transform: uppercase;
+      h5 {
+        font-size: 12px;
+        color: #727272;
+        font-weight: 700;
+      }
+    }
+  }
+}
+// Categories Slider End

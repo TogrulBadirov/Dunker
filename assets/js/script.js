@@ -20,14 +20,17 @@ const menuItems = document.querySelectorAll('.mobile-navbar-item')
 
 menuItems.forEach(item => {
   item.addEventListener('click', e => {
-    // e.stopPropagation()
-
     menuItems.forEach(otherItem => {
       if (otherItem !== item) {
         otherItem.classList.remove('active')
       }
     })
-    item.classList.toggle('active')
+    const subMenu = item.querySelector('.mobile-subMenu-items')
+    if (subMenu.contains(e.target)) {
+      e.stopPropagation()
+    } else {
+      item.classList.toggle('active')
+    }
   })
 })
 
@@ -35,7 +38,7 @@ menuItems.forEach(item => {
 const progressCircle = document.querySelector('.autoplay-progress svg')
 const progressContent = document.querySelector('.autoplay-progress span')
 
-//SwiperJS Configuration,SplitType animation with GSAP
+//SwiperJS Configurations,SplitType animation with GSAP
 var swiper = new Swiper('.mySwiper', {
   spaceBetween: 30,
   loop: true,
@@ -74,6 +77,42 @@ var swiper = new Swiper('.mySwiper', {
   }
 })
 
+var swiper = new Swiper('.categoriesSwiper', {
+  slidesPerView: 1,
+  spaceBetween: 30,
+  freeMode: true,
+  loop: true,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true
+  },
+  breakpoints: {
+    992: {
+      slidesPerView: 6,
+      spaceBetween: 20
+    },
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 80
+    }
+  }
+})
+
+var swiper = new Swiper('.productCardSlider', {
+  slidesPerView: 1,
+  spaceBetween: 30,
+  loop: true,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  }
+})
+
+//Scroll Navbar Animation
 let navbar = document.getElementById('nav')
 let navbarHeight = navbar.offsetHeight
 let scrollPos = window.scrollY
@@ -85,7 +124,6 @@ function updateNavbar() {
     navbar.classList.add('sticky')
   } else {
     navbar.classList.remove('sticky')
-    //gedende animasiya ile getsin ele bil
   }
 }
 
@@ -94,3 +132,25 @@ window.addEventListener('scroll', function () {
 })
 
 updateNavbar()
+
+//Open Basket Menu
+const basketBtn = document.querySelector('.basket-btn')
+const basketMobileBtn = document.querySelector('.mobile-nav-basket')
+const basketMenu = document.querySelector('.basket-sidebar')
+const basketClose = document.querySelector('.button-close')
+
+basketBtn.addEventListener('click', e => {
+  e.preventDefault()
+  basketMenu.classList.toggle('active')
+})
+
+basketMobileBtn.addEventListener('click', e => {
+  e.preventDefault()
+  console.log(e.target)
+  basketMenu.classList.toggle('active')
+})
+
+basketClose.addEventListener('click', e => {
+  e.preventDefault()
+  basketMenu.classList.remove('active')
+})
