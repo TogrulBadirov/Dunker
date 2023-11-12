@@ -236,7 +236,10 @@
 
 // New Collections Start
 #new-collection {
-  padding: 85px 0;
+  padding: 40px 0;
+  .section-container{
+    padding: 0 70px;
+  }
   .row {
     padding-left: 0;
     padding-right: 0;
@@ -371,7 +374,7 @@
 // Categories Start
 
 #banner {
-  padding: 120px 0;
+  padding-top: 60px;
 
   .banner-new,
   .banner-sale {
@@ -455,7 +458,9 @@
 // Trending Start
 #trending {
   padding: 0 70px;
-
+  .section-title{
+    padding: 0 0 50px 0;
+  }
   .featured-products-container {
     .featured-products-card {
       position: relative;
@@ -568,3 +573,70 @@
   }
 }
 // Categories Slider End
+#street-vibe{
+    background-image: url("https://dunker.qodeinteractive.com/wp-content/uploads/2023/01/h1-parallax-img-001.jpg");
+    min-height: 700px;;
+    background-position: center;    
+    background-size: cover;
+    min-height: 700px;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    max-width: 100%;
+    .street-title{
+      padding-right: 40px;
+        margin-left: auto;
+        display: block;
+        width: 366px;
+        h2{
+            font-weight: 700;
+            color: black;
+            font-size: 60px;
+        }
+        span{
+            font-family: sans-serif;
+            font-size: 11px;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: gray;
+
+        }
+           .custom-button{
+            margin-top: 20px;
+            display: inline-block
+           }
+           
+            
+          
+            
+        
+       
+    }
+
+}
+@media only screen and (max-width: 768px) {
+    #street-vibe {
+    .street-title{
+        text-align: left;
+        margin-right: auto;
+        margin-left: 10px;
+    }
+    }
+  }
+#elementor-section{
+    border-collapse: collapse;
+    display: flex;
+   justify-content: center;
+   align-items: center;
+padding: 100px;
+div{
+    text-align: center;
+    border-collapse: collapse;
+ border: 1px solid #ccc;
+transition: .3s; 
+}
+div:hover{
+border: 1px solid black;
+
+}
+}

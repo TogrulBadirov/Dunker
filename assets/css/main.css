@@ -349,6 +349,28 @@ ol {
     font-size: 41px;
   }
 }
+#footer .section-container {
+  padding: 0 70px;
+}
+#footer .content {
+  padding: 20px 130px;
+}
+#footer .content .content-bottom {
+  justify-content: space-between;
+  align-items: center;
+}
+#footer .content .content-bottom .services {
+  align-items: center;
+  padding: 25px 30px;
+}
+#footer .content .content-bottom .services span {
+  font-weight: 600;
+  font-size: 17px;
+}
+#footer .content .content-bottom .content-logo {
+  justify-content: center;
+  padding: 25px 30px;
+}
 #footer .top-footer {
   border-bottom: 1px solid #ccc;
 }
@@ -1144,7 +1166,10 @@ ol {
 }
 
 #new-collection {
-  padding: 85px 0;
+  padding: 40px 0;
+}
+#new-collection .section-container {
+  padding: 0 70px;
 }
 #new-collection .row {
   padding-left: 0;
@@ -1259,7 +1284,7 @@ ol {
   }
 }
 #banner {
-  padding: 120px 0;
+  padding-top: 60px;
 }
 #banner .banner-new,
 #banner .banner-sale {
@@ -1328,6 +1353,9 @@ ol {
 }
 #trending {
   padding: 0 70px;
+}
+#trending .section-title {
+  padding: 0 0 50px 0;
 }
 #trending .featured-products-container .featured-products-card {
   position: relative;
@@ -1432,6 +1460,64 @@ ol {
   font-size: 12px;
   color: #727272;
   font-weight: 700;
+}
+
+#street-vibe {
+  background-image: url("https://dunker.qodeinteractive.com/wp-content/uploads/2023/01/h1-parallax-img-001.jpg");
+  min-height: 700px;
+  background-position: center;
+  background-size: cover;
+  min-height: 700px;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  max-width: 100%;
+}
+#street-vibe .street-title {
+  padding-right: 40px;
+  margin-left: auto;
+  display: block;
+  width: 366px;
+}
+#street-vibe .street-title h2 {
+  font-weight: 700;
+  color: black;
+  font-size: 60px;
+}
+#street-vibe .street-title span {
+  font-family: sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: gray;
+}
+#street-vibe .street-title .custom-button {
+  margin-top: 20px;
+  display: inline-block;
+}
+
+@media only screen and (max-width: 768px) {
+  #street-vibe .street-title {
+    text-align: left;
+    margin-right: auto;
+    margin-left: 10px;
+  }
+}
+#elementor-section {
+  border-collapse: collapse;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+}
+#elementor-section div {
+  text-align: center;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  transition: 0.3s;
+}
+#elementor-section div:hover {
+  border: 1px solid black;
 }
 
 #detail-product {
