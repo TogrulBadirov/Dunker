@@ -1174,4 +1174,67 @@ ol {
   font-size: 12px;
   color: #727272;
   font-weight: 700;
+}
+
+#whishlist {
+  margin: 0 60px;
+}
+#whishlist .wish-list-nav {
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+#whishlist .product-wishlist {
+  padding: 60px 0 120px;
+}
+#whishlist .product-wishlist h2 {
+  font-size: 60px;
+  font-family: "Yantramanav", sans-serif;
+  text-transform: uppercase;
+  font-weight: 800;
+  padding-bottom: 60px;
+}
+#whishlist .product-wishlist .added-products {
+  border-top: 1px solid #e7e7e7;
+  border-bottom: 1px solid #e7e7e7;
+  padding: 20px;
+}
+#whishlist .product-wishlist .added-products p {
+  text-transform: uppercase;
+  margin: 0;
+  font-size: 14px;
+  font-family: "Yantramanav", sans-serif;
+  font-weight: 600;
+}
+#whishlist .product-wishlist .added-products .wish-list-element {
+  padding: 10px 0;
+  border: 1px solid #d9d9d9;
+  display: flex;
+  align-items: center;
+}
+#whishlist .product-wishlist .added-products .wish-list-element .remove-element {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+#whishlist .product-wishlist .added-products .wish-list-element .img-element {
+  width: 84px;
+  height: 84px;
+  border: 1px solid #d9d9d9;
+  display: flex;
+  justify-content: center;
+}
+#whishlist .product-wishlist .added-products .wish-list-element .img-element img {
+  height: 100%;
+}
+#whishlist .product-wishlist .added-products .wish-list-element .element-details {
+  display: flex;
+}
+#whishlist .product-wishlist .added-products .wish-list-element .price-and-stock {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+#whishlist .product-wishlist .added-products .wish-list-element .price-and-stock span {
+  padding: 0 10px;
 }/*# sourceMappingURL=main.css.map */

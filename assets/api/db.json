@@ -14,7 +14,8 @@
         "brend": "kickz",
         "category": "fitness",
         "price": 45,
-        "status": null
+        "status": null,
+        "type": "featured"
     },
     {
         "id": 2,
@@ -29,7 +30,8 @@
         "brend": "new balance",
         "category": "fitness",
         "price": 75,
-        "status": "new"
+        "status": "new",
+        "type": "featured"
     },
     {
         "id": 3,
@@ -45,7 +47,8 @@
         "brend": "rang",
         "category": "winter",
         "price": 120,
-        "status": null
+        "status": null,
+        "type": "featured"
     },
     {
         "id": 4,
@@ -62,7 +65,8 @@
         "category": "cycling",
         "price": 120,
         "status": "sale",
-        "discount":20
+        "discount":20,
+        "type": "featured"
     },
     {
         "id": 5,
@@ -79,7 +83,8 @@
         "category": "winter",
         "price": 100,
         "status": "sale",
-        "discount":15
+        "discount":15,
+        "type": "featured"
     },
     {
         "id": 6,
@@ -95,7 +100,8 @@
         "brend": "adidas",
         "category": "fitness",
         "price": 50,
-        "status": null
+        "status": null,
+        "type": "featured"
     },
     {
         "id": 7,
@@ -111,7 +117,8 @@
         "brend": "kickz",
         "category": "fitness",
         "price": 35,
-        "status": null
+        "status": null,
+        "type": "featured"
     },
     {
         "id": 8,
@@ -127,7 +134,143 @@
         "brend": "puma",
         "category": "winter",
         "price": 75,
-        "status": "sold"
+        "status": "sold",
+        "type": "featured"
+    },
+    {
+        "id": 9,
+        "title": "short trousers",
+        "image": [
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-54.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-55.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-56.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-57.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-58.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-59.jpg"
+        ],
+        "brend": "kickz",
+        "category": "clothes",
+        "price": 45,
+        "status": null,
+        "type": "trending"
+    },
+    {
+        "id": 10,
+        "title": "training bag",
+        "image": [
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-29.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-30.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-31.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-32.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-33.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-34.jpg"
+        ],
+        "brend": "rebook",
+        "category": "bags",
+        "price": 75,
+        "status": null,
+        "type": "trending"
+    },
+    {
+        "id": 11,
+        "title": "run fast shoes",
+        "image": [
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2023/01/main-home-product-16.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2023/01/main-home-product-15.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2023/01/main-home-product-14.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2023/01/main-home-product-13.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2023/01/main-home-product-12.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2023/01/main-home-product-11.jpg"
+        ],
+        "brend": "salomon",
+        "category": "sport",
+        "price": 250,
+        "status": null,
+        "type": "trending"
+    },
+    {
+        "id": 12,
+        "title": "jordan shoes",
+        "image": [
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2023/01/main-home-product-17.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2023/01/main-home-product-18.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2023/01/main-home-product-19.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2023/01/main-home-product-20.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2023/01/main-home-product-21.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2023/01/main-home-product-22.jpg"
+        ],
+        "brend": "",
+        "category": "sport",
+        "price": 165,
+        "status": null,
+        "type": "trending"
+    },
+    {
+        "id": 13,
+        "title": "money bag",
+        "image": [
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-23.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-24.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-25.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-26.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-27.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-28.jpg"
+        ],
+        "brend": "salomon",
+        "category": "bags",
+        "price": 50,
+        "status": null,
+        "type": "trending"
+    },
+    {
+        "id": 14,
+        "title": "city sunglasses",
+        "image": [
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-48.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-49.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-50.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-51.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-52.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-sidebar-53.jpg"
+        ],
+        "brend": "kickz",
+        "category": "sport",
+        "price": 45,
+        "status": null,
+        "type": "trending"
+    },
+    {
+        "id": 15,
+        "title": "CASUAL T-SHIRT",
+        "image": [
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/main-home-product-1.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-single-3-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-single-1-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-single-2-800x975.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-single-4-800x975.jpg"
+        ],
+        "brend": "salomon",
+        "category": "fashion",
+        "price": 180,
+        "status": null,
+        "type": "newColection"
+    },
+    {
+        "id": 16,
+        "title": "ADIDAS SNEAKERS",
+        "image": [
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/main-home-product-2.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2023/01/home-2-product-6.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2023/01/home-2-product-5.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2023/01/home-2-product-4.jpg",
+            "https://dunker.qodeinteractive.com/wp-content/uploads/2023/01/home-2-product-3.jpg"
+
+        ],
+        "brend": "adidas",
+        "category": "fashion",
+        "price": 95,
+        "status": null,
+        "type": "newColection"
     }
   ],
   "comments": [
