@@ -23,7 +23,8 @@ countBasket.forEach((item) => {
 basketTotal.innerHTML = '$' + calculateSubTotal();
 
 async function getData() {
-  const response = await axios.get("http://localhost:3000/products");
+  try {
+    const response = await axios.get("http://localhost:3000/products");
   //generating FEATURED PRODUCTS
   response.data.forEach((element) => {
     if (element.type === "featured") {
@@ -60,7 +61,11 @@ async function getData() {
 
       localStorage.setItem("basket", JSON.stringify(bascetArr));
     });
-    featuredProductsContainer.appendChild(card);
+    try {
+      featuredProductsContainer.appendChild(card);
+    } catch (error) {
+      
+    }
     }
   });
 
@@ -95,7 +100,11 @@ async function getData() {
 
       localStorage.setItem("basket", JSON.stringify(bascetArr));
     });
-    trendingProductsContainer.appendChild(card);
+    try {
+      trendingProductsContainer.appendChild(card);
+    } catch (error) {
+      
+    }
     cardCount++
     }
     
@@ -152,6 +161,9 @@ async function getData() {
       prevEl: ".swiper-button-prev",
     },
   });
+  } catch (error) {
+    
+  }
 }
 
 getData();
@@ -166,7 +178,7 @@ function generateFeaturedCard(product,count) {
   );
   card.setAttribute('data',product.category)
   card.innerHTML = `
-
+<a href="./product-detail.html?id=${product.id}">
   <span id="${count!==0?"featured-text":""}">${count===0?"Featured":"New Collection"}</span>
   <img
     src="${product.image[0]}"
@@ -204,7 +216,7 @@ function generateFeaturedCard(product,count) {
       ></path>
     </svg>
   </button>
-
+</a>
                     `;
 
   return card;
@@ -220,6 +232,7 @@ function generateCard(product) {
   );
   card.setAttribute('data',product.category)
   card.innerHTML = `
+  <a href="./product-detail.html?id=${product.id}">
     <span class="${product.status === "new" ? "new-product-icon" : ""}">${
     product.status === "new" ? product.status : ""
   }</span>
@@ -306,6 +319,7 @@ function generateCard(product) {
         ></path>
       </svg>
     </button>
+    </a>
                     `;
 
   return card;
@@ -330,6 +344,7 @@ console.log(count,'count');
   }
   card.setAttribute('data',product.category)
   card.innerHTML = `
+  <a href="./product-detail.html?id=${product.id}">
     <span class="${product.status === "new" ? "new-product-icon" : ""}">${
     product.status === "new" ? product.status : ""
   }</span>
@@ -416,6 +431,7 @@ console.log(count,'count');
         ></path>
       </svg>
     </button>
+    </a>
                     `;
 
   return card;
@@ -455,10 +471,23 @@ filterBtn.forEach(element => {
         });
     });
 });
-showAllBtn.addEventListener('click',()=>{
-        let cards = featuredProductsContainer.querySelectorAll('.featured-products-card');
-        cards.forEach(item => {
-            item.style.display = 'block';
-        });
+try {
+  showAllBtn.addEventListener('click',()=>{
+    let cards = featuredProductsContainer.querySelectorAll('.featured-products-card');
+    cards.forEach(item => {
+        item.style.display = 'block';
+    });
 })
+} catch (error) {
+  
+}
     
+const categoryItem = document.querySelectorAll('.category-items');
+categoryItem.forEach(element => {
+  element.addEventListener('mousemove', function(e) {
+  const productOffset = element.getBoundingClientRect();
+  const categoryImage = element.querySelector('.product-image');
+  categoryImage.style.left = e.pageX  + 'px';
+  categoryImage.style.top = e.pageY + 'px';
+},100);
+});

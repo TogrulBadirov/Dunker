@@ -1237,6 +1237,7 @@ ol {
   text-align: center;
 }
 #categories .categories-container .categories-content .category-item .category-title {
+  z-index: 3;
   font-weight: 700;
   text-transform: uppercase;
   font-size: 77px;
@@ -1249,6 +1250,28 @@ ol {
   right: -10px;
   color: #727272;
   font-size: 14px;
+}
+#categories .categories-container .categories-content .category-items {
+  display: inline-block;
+}
+#categories .categories-container .categories-content .product-image {
+  z-index: 0;
+  display: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s;
+}
+#categories .categories-container .categories-content .category-items:hover .product-image {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 3;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#categories .categories-container .categories-content .category-items:hover .product-image:hover {
+  cursor: none;
 }
 
 @media only screen and (max-width: 992px) {
