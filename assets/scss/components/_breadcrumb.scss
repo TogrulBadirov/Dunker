@@ -1,0 +1,14 @@
+#breadcrumb {
+  padding: 0 70px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  span {
+    font-size: 12px;
+    font-weight: 700;
+    color: #727272;
+  }
+  .line {
+    margin: 0 10px;
+  }
+}

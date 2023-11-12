@@ -1,6 +1,7 @@
 @import './base/reset.scss';
 @import './base/typography.scss';
 
+@import './components/breadcrumb';
 @import './components/sidebars';
 @import './components/buttons.scss';
 @import './components/carousel.scss';
@@ -11,3 +12,4 @@
 @import './layout/navigation.scss';
 
 @import './pages/home.scss';
+@import './pages/product-detail';

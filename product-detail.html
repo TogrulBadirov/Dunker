@@ -9,6 +9,9 @@
       href="./assets/img/cropped-favicon-32x32.png"
       type="image/x-icon" />
     <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/zoomist@2/zoomist.css" />
+    <link
       rel="shortcut icon"
       href="./assets/img/cropped-favicon-32x32.png"
       type="image/x-icon" />
@@ -38,7 +41,6 @@
     <!-- CSS -->
     <link rel="stylesheet" href="./assets/css/main.css" />
   </head>
-
   <body>
     <!-- Header Section Start -->
     <header id="header">
@@ -52,7 +54,7 @@
         </button>
       </div>
       <!-- Navbar Start -->
-      <nav id="nav" class="d-lg-block d-none">
+      <nav id="nav" class="d-lg-block position-relative d-none">
         <div class="navbar-container">
           <div class="leftside-nav">
             <div class="logo">
@@ -405,362 +407,168 @@
           </div>
         </div>
       </div>
-
-      <!-- Hero Slider -->
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="slider-title">
-              <h1 class="slider-heading">LIMITED EDITION SPORTSWEAR</h1>
-              <p class="pb-4">
-                Search the Dunker and find the ideal pieces for you
-              </p>
-              <a href="#" class="custom-button">SHOP NOW</a>
-            </div>
-            <div class="overlay"></div>
-            <img
-              src="https://dunker.qodeinteractive.com/wp-content/uploads/2023/01/h1-rev-img-1.jpg" />
-          </div>
-          <div class="swiper-slide">
-            <div class="slider-title">
-              <h1 class="slider-heading">LIMITED EDITION SPORTSWEAR</h1>
-              <p class="pb-4">
-                Search the Dunker and find the ideal pieces for you
-              </p>
-              <a href="#" class="custom-button">SHOP NOW</a>
-            </div>
-            <div class="overlay"></div>
-            <img
-              src="https://dunker.qodeinteractive.com/wp-content/uploads/2023/01/h1-rev-img-2.jpg" />
-          </div>
-          <div class="swiper-slide">
-            <div class="slider-title">
-              <h1 class="slider-heading">uv protective clothes</h1>
-              <p class="pb-4">
-                Search the Dunker and find the ideal pieces for you
-              </p>
-              <a href="#" class="custom-button">SHOP NOW</a>
-            </div>
-            <div class="overlay"></div>
-            <img
-              src="https://dunker.qodeinteractive.com/wp-content/uploads/2023/01/h1-rev-img-3.jpg" />
-          </div>
-        </div>
-        <button class="border-0"><div class="swiper-button-next"></div></button>
-        <button class="border-0"><div class="swiper-button-prev"></div></button>
-        <div class="autoplay-progress d-lg-flex d-none">
-          <svg viewBox="0 0 48 48">
-            <circle cx="24" cy="24" r="20"></circle>
-          </svg>
-          <span></span>
-        </div>
-        <!-- <div class="swiper-pagination"></div> -->
-      </div>
     </header>
     <!-- Header Section End -->
 
+    <!-- Breadcrumb Navigation Start -->
+    <nav id="breadcrumb">
+      <span><a href="./index.html">HOME</a></span>
+      <span class="line">|</span>
+      <span><a href="#" class="text-dark">WHITE SHIRT</a></span>
+    </nav>
+    <!-- Breadcrumb Navigation End -->
+
     <!-- Main Start -->
     <main id="main">
-      <!-- featured section start  -->
-      <section id="featured">
-        <div class="featured-container">
-          <div class="row">
-            <div class="product-card col-lg-6 col-md-12">
-              <span>featured</span>
-              <img
-                src="https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/main-home-product-1.jpg"
-                alt="product" />
-              <div class="product-card-details">
-                <div class="product-detail-content">
-                  <a href="#">Salomon</a>
-                  <a class="product-detail-title">Casual T-Shirt</a>
-                  <a href="">Fashion</a>
-                </div>
-                <p>$180</p>
-                <button class="add-to-fav-button">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16.932"
-                    height="16"
-                    viewBox="0 0 16.932 16">
-                    <path
-                      d="M8.467 16a1.756 1.756 0 0 1-.94-.273c-.67-.422-6.576-4.254-7.425-8.776a6.154 6.154 0 0 1 1.27-4.977A5.177 5.177 0 0 1 5.356 0a4.369 4.369 0 0 1 3.111 1.086A4.185 4.185 0 0 1 11.577 0a5.18 5.18 0 0 1 3.983 1.973 6.157 6.157 0 0 1 1.269 4.977c-.849 4.522-6.755 8.354-7.426 8.777a1.753 1.753 0 0 1-.936.273ZM5.356 2A3.186 3.186 0 0 0 2.92 3.241a4.133 4.133 0 0 0-.853 3.341c.646 3.439 5.543 6.806 6.4 7.371.857-.565 5.754-3.932 6.4-7.371a4.136 4.136 0 0 0-.851-3.341A3.192 3.192 0 0 0 11.577 2a3.021 3.021 0 0 0-2.354 1.122 1 1 0 0 1-.756.346 1 1 0 0 1-.756-.345A3.024 3.024 0 0 0 5.356 2Z" />
-                  </svg>
-                </button>
-              </div>
-              <button class="add-to-basket-button">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="15"
-                  height="17"
-                  viewBox="0 0 15 17">
-                  <path
-                    d="M14 3.5h-3a3.5 3.5 0 0 0-7 0H1a1 1 0 0 0-1 1V15a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V4.5a1 1 0 0 0-1-1ZM7.5 2A1.5 1.5 0 0 1 9 3.5H6A1.5 1.5 0 0 1 7.5 2ZM13 15H2V5.5h2v1a1 1 0 0 0 2 0v-1h3v1a1 1 0 0 0 2 0v-1h2Z"></path>
-                </svg>
-              </button>
-            </div>
-            <div class="product-card col-lg-6 col-md-12">
-              <span id="featured-text">new collection</span>
-              <img
-                src="https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/main-home-product-2.jpg"
-                alt="product" />
-              <div class="product-card-details">
-                <div class="product-detail-content">
-                  <a href="#">Salomon</a>
-                  <a class="product-detail-title">Casual T-Shirt</a>
-                  <a href="">Fashion</a>
-                </div>
-                <p>$180</p>
-                <button class="add-to-fav-button">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16.932"
-                    height="16"
-                    viewBox="0 0 16.932 16">
-                    <path
-                      d="M8.467 16a1.756 1.756 0 0 1-.94-.273c-.67-.422-6.576-4.254-7.425-8.776a6.154 6.154 0 0 1 1.27-4.977A5.177 5.177 0 0 1 5.356 0a4.369 4.369 0 0 1 3.111 1.086A4.185 4.185 0 0 1 11.577 0a5.18 5.18 0 0 1 3.983 1.973 6.157 6.157 0 0 1 1.269 4.977c-.849 4.522-6.755 8.354-7.426 8.777a1.753 1.753 0 0 1-.936.273ZM5.356 2A3.186 3.186 0 0 0 2.92 3.241a4.133 4.133 0 0 0-.853 3.341c.646 3.439 5.543 6.806 6.4 7.371.857-.565 5.754-3.932 6.4-7.371a4.136 4.136 0 0 0-.851-3.341A3.192 3.192 0 0 0 11.577 2a3.021 3.021 0 0 0-2.354 1.122 1 1 0 0 1-.756.346 1 1 0 0 1-.756-.345A3.024 3.024 0 0 0 5.356 2Z" />
-                  </svg>
-                </button>
-              </div>
-              <button class="add-to-basket-button">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="15"
-                  height="17"
-                  viewBox="0 0 15 17">
-                  <path
-                    d="M14 3.5h-3a3.5 3.5 0 0 0-7 0H1a1 1 0 0 0-1 1V15a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V4.5a1 1 0 0 0-1-1ZM7.5 2A1.5 1.5 0 0 1 9 3.5H6A1.5 1.5 0 0 1 7.5 2ZM13 15H2V5.5h2v1a1 1 0 0 0 2 0v-1h3v1a1 1 0 0 0 2 0v-1h2Z"></path>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- featured section end  -->
-
-      <!-- featured-products start -->
-      <section id="featured-products">
-        <div class="section-title">
-          <span>dunker collection</span>
-          <h2>Featured Products</h2>
-        </div>
-        <div class="featured-products-filter">
-          <button class="show-all-btn">show all</button>
-          <button class="filter-btn" data="fitness">fitness</button>
-          <button class="filter-btn" data="cycling">cycling</button>
-          <button class="filter-btn" data="winter">winter</button>
-        </div>
-        <div class="featured-products-container">
-          <div class="row justify-content-center"></div>
-        </div>
-      </section>
-      <!-- featured-products end -->
-
-      <!-- Product Video Section Start -->
-      <section id="product-video">
-        <a href="#" id="video-link" class="play">
-          <svg
-            class="play-btn"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            x="0px"
-            y="0px"
-            width="65"
-            height="65"
-            viewBox="0 0 65 65"
-            style="enable-background: new 0 0 65 65"
-            xml:space="preserve">
-            <path
-              d="M59.6,31.6c0.5,0.3,0.6,0.9,0.3,1.4c-0.1,0.1-0.2,0.2-0.3,0.3L17.5,59.1c-0.5,0.3-1.1,0.1-1.4-0.3
-                          c-0.1-0.2-0.1-0.3-0.1-0.5V6.8c0-0.6,0.4-1,1-1c0.2,0,0.4,0.1,0.5,0.1L59.6,31.6z"></path>
-          </svg>
-        </a>
-
-        <div id="video-container">
-          <span class="remove-video">
-            <i class="fa-solid fa-x"></i>
-          </span>
-          <iframe
-            id="video-frame"
-            src=""
-            frameborder="0"
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowfullscreen></iframe>
-        </div>
-      </section>
-
-      <!-- New Collections Section Start -->
-      <section id="new-collection">
-        <div class="section-title">
-          <span>EXPLORE OUR WORLD</span>
-          <h2>NEW COLLECTIONS</h2>
-        </div>
-        <div class="section-container">
-          <div class="new-collection">
-            <div class="row g-0">
-              <div class="col-md-4 col-12">
-                <div class="banner">
-                  <div class="banner-container">
-                    <div class="banner-img">
-                      <img
-                        src="https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/h1-ibanner-3.jpg"
-                        alt="Banner" />
-                      <div class="img-title">
-                        <a href="#">NORTH FACE</a>
-                        <h3>GYM BACKPACK</h3>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="banner-title">
-                    <h6>EXPLORE COLLECTION</h6>
-                    <a href="#" class="banner-icon">
-                      <i class="fa fa-chevron-right"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 col-12">
-                <div class="banner">
-                  <div class="banner-container">
-                    <div class="banner-img">
-                      <img
-                        src="https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/h1-banner-1.jpg"
-                        alt="Banner" />
-                      <div class="img-title">
-                        <a href="#" class="text-white">NORTH FACE</a>
-                        <h3 class="text-white">GYM BACKPACK</h3>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="banner-title">
-                    <h6>EXPLORE COLLECTION</h6>
-                    <a href="#" class="banner-icon">
-                      <i class="fa fa-chevron-right"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 col-12">
-                <div class="banner">
-                  <div class="banner-container">
-                    <div class="banner-img">
-                      <img
-                        src="https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/h1-ibanner-3.jpg"
-                        alt="Banner" />
-                      <div class="img-title">
-                        <a href="#">NORTH FACE</a>
-                        <h3>GYM BACKPACK</h3>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="banner-title">
-                    <h6>EXPLORE COLLECTION</h6>
-                    <a href="#" class="banner-icon">
-                      <i class="fa fa-chevron-right"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- New Collections Section End -->
-
-      <!-- Categories Section Start -->
-      <section id="categories">
-        <div class="section-title">
-          <span>BUY BEST FASHION</span>
-        </div>
-        <div class="categories-container">
-          <div class="categories-content text-center">
-            <a href="#" class="category-item">
-              <span class="category-title">
-                FASHION
-                <span class="category-count">(28)</span>
-              </span>
-            </a>
-            <a href="#" class="category-item">
-              <span class="category-title">
-                CLOTHES
-                <span class="category-count">(28)</span>
-              </span>
-            </a>
-            <a href="#" class="category-item">
-              <span class="category-title">
-                HOODIES
-                <span class="category-count">(28)</span>
-              </span>
-            </a>
-            <a href="#" class="category-item">
-              <span class="category-title">
-                JACKET
-                <span class="category-count">(28)</span>
-              </span>
-            </a>
-            <a href="#" class="category-item">
-              <span class="category-title">
-                SPORT
-                <span class="category-count">(28)</span>
-              </span>
-            </a>
-            <a href="#" class="category-item">
-              <span class="category-title">
-                BAGS
-                <span class="category-count">(28)</span>
-              </span>
-            </a>
-            <a href="#" class="category-item">
-              <span class="category-title">
-                FASHION
-                <span class="category-count">(28)</span>
-              </span>
-            </a>
-            <a href="#" class="category-item">
-              <span class="category-title">
-                FOOTWEAR
-                <span class="category-count">(28)</span>
-              </span>
-            </a>
-            <a href="#" class="category-item">
-              <span class="category-title">
-                T-SHIRT
-                <span class="category-count">(28)</span>
-              </span>
-            </a>
-          </div>
-        </div>
-      </section>
-      <!-- Categories Section End -->
-
-      <!-- Banner Section Start -->
-      <section id="banner">
-        <div class="row g-0">
+      <section id="detail-product">
+        <div class="row g-5">
           <div class="col-lg-6 col-12">
-            <div class="banner-new">
-              <div class="new-title">
-                <p>New</p>
+            <div class="image-gallery">
+              <div class="zoom-img">
+                <div class="zoomist-container">
+                  <!-- zoomist-wrapper is required -->
+                  <div class="zoomist-wrapper">
+                    <!-- zoomist-image is required -->
+                    <div class="zoomist-image">
+                      <img
+                        src="https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-filter-1.jpg"
+                        alt="Product"
+                        id="zoom-img" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="gallery-items">
+                <div class="gallery-item">
+                  <img
+                    src="https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-filter-11-150x150.jpg"
+                    alt="Product"
+                    class="gallery-img" />
+                </div>
+                <div class="gallery-item">
+                  <img
+                    src="https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-filter-10-150x150.jpg"
+                    alt="Product"
+                    class="gallery-img" />
+                </div>
+                <div class="gallery-item">
+                  <img
+                    src="https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-filter-9-150x150.jpg"
+                    alt="Product"
+                    class="gallery-img" />
+                </div>
+                <div class="gallery-item">
+                  <img
+                    src="https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-list-filter-8-150x150.jpg"
+                    alt="Product"
+                    class="gallery-img" />
+                </div>
               </div>
             </div>
           </div>
           <div class="col-lg-6 col-12">
-            <div class="banner-sale">
-              <div class="sale-title">
-                <p class="sale-text">Sale</p>
-                <p class="discount">20% Off all Hoodies</p>
-                <a href="#" class="custom-button">SHOP NOW</a>
+            <div class="product-content">
+              <div class="product-heading">
+                <h1>WHITE SHIRT</h1>
+                <span>$45</span>
+                <p>
+                  Alienum phaedrum torquatos nec eu, vis detraxit periculis ex,
+                  nihil expete mei. Mei an Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit. Ut nec vulputate massa. Maecenas
+                  dui augue, dictum dictum varius nec, suscipit eu dolor. Duis
+                  tellus.
+                </p>
+              </div>
+              <div class="product-actions">
+                <div class="counter">
+                  <button class="decrease-product">-</button>
+                  <span class="product-count">0</span>
+                  <button class="increase-product">+</button>
+                </div>
+                <a href="#" class="custom-button">
+                  ADD TO CART
+                  <span class="basket-product">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                  </span>
+                </a>
+                <a href="#" class="wishlist-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </a>
+              </div>
+              <div class="product-info">
+                <div class="share">
+                  <a href="#" class="fs-5 py-5 d-inline-block">
+                    <i class="fa-solid fa-square-share-nodes"></i>
+                  </a>
+                </div>
+                <div class="product-stats">
+                  <div class="sku">
+                    <span>SKU:</span>
+                    <a href="#">232-1-2</a>
+                  </div>
+                  <div class="category">
+                    <span>CATEGORY:</span>
+                    <a href="#">FITNESS</a>
+                  </div>
+                  <div class="tag">
+                    <span>TAG:</span>
+                    <a href="#">SPORT</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 pt-5">
+            <div class="product-description">
+              <div class="product-description-header">
+                <ul class="tab-items" id="tabItems">
+                  <li class="tab-item">
+                    <a href="#" class="tab-link" data-tab="description">
+                      DESCRIPTION
+                    </a>
+                  </li>
+                  <li class="tab-item">
+                    <a href="#" class="tab-link" data-tab="additional-info">
+                      ADDITIONAL INFORMATION
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="tabs-content pt-4" id="tabContent">
+                <div class="tab" data-tab="description">
+                  <p class="fs-5">
+                    Alienum phaedrum torquatos nec eu, vis detraxit periculis
+                    ex, nihil expete mei. Mei an Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Ut nec vulputate massa in et.
+                    Maecenas dui augue, dictum dictum varius nec, suscipit eu
+                    dolor. Duis tellus ligula, porta et mauris sit amet,
+                    condimentum sagittis erat. Duis eget nisi velit nunc.
+                    Curabitur dignissim justo tortor. Consequat an. Eius lorem
+                    tincidunt vix at, vel pertinax sensibus id, error epicurei
+                    mea. Donec ut velit mi vitae
+                  </p>
+                </div>
+                <div class="tab d-none" data-tab="additional-info">
+                  <div class="product-stats">
+                    <div class="sku">
+                      <span>WEIGHT:</span>
+                      <a href="#">0.4 kg</a>
+                    </div>
+                    <div class="category">
+                      <span>DIMENSIONS:</span>
+                      <a href="#">60 × 40 × 120 cm</a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <!-- Banner Section End -->
 
-      <!-- Trending Section Start  -->
-      <section id="trending" class="pb-5">
-        <div class="section-title">
-          <span>FIND WHAT IS</span>
-          <h2>TRENDING NOW</h2>
+      <section id="related-products">
+        <div class="title">
+          <h2>RELATED PRODUCTS</h2>
         </div>
         <div class="featured-products-container">
           <div class="row justify-content-center">
@@ -848,90 +656,6 @@
                 </svg>
               </button>
             </div>
-            <div class="featured-products-card col-lg-6 col-12">
-              <button class="add-to-fav-button">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16.932"
-                  height="16"
-                  viewBox="0 0 16.932 16">
-                  <path
-                    d="M8.467 16a1.756 1.756 0 0 1-.94-.273c-.67-.422-6.576-4.254-7.425-8.776a6.154 6.154 0 0 1 1.27-4.977A5.177 5.177 0 0 1 5.356 0a4.369 4.369 0 0 1 3.111 1.086A4.185 4.185 0 0 1 11.577 0a5.18 5.18 0 0 1 3.983 1.973 6.157 6.157 0 0 1 1.269 4.977c-.849 4.522-6.755 8.354-7.426 8.777a1.753 1.753 0 0 1-.936.273ZM5.356 2A3.186 3.186 0 0 0 2.92 3.241a4.133 4.133 0 0 0-.853 3.341c.646 3.439 5.543 6.806 6.4 7.371.857-.565 5.754-3.932 6.4-7.371a4.136 4.136 0 0 0-.851-3.341A3.192 3.192 0 0 0 11.577 2a3.021 3.021 0 0 0-2.354 1.122 1 1 0 0 1-.756.346 1 1 0 0 1-.756-.345A3.024 3.024 0 0 0 5.356 2Z" />
-                </svg>
-              </button>
-              <div class="images-slider">
-                <div class="swiper productCardSlider">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <img
-                        src="https://dunker.qodeinteractive.com/wp-content/uploads/2023/01/main-home-product-16.jpg"
-                        alt="productImg" />
-                    </div>
-                    <div class="swiper-slide">Slide 2</div>
-                  </div>
-                  <div class="swiper-button-next"></div>
-                  <div class="swiper-button-prev"></div>
-                </div>
-              </div>
-              <div class="product-card-content">
-                <a href="#">Kickz</a>
-                <a href="#" class="product-title">Black Nike</a>
-                <a href="#" class="product-category">Fitness</a>
-                <span>$75</span>
-              </div>
-              <button class="add-to-basket-button">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="15"
-                  height="17"
-                  viewBox="0 0 15 17">
-                  <path
-                    d="M14 3.5h-3a3.5 3.5 0 0 0-7 0H1a1 1 0 0 0-1 1V15a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V4.5a1 1 0 0 0-1-1ZM7.5 2A1.5 1.5 0 0 1 9 3.5H6A1.5 1.5 0 0 1 7.5 2ZM13 15H2V5.5h2v1a1 1 0 0 0 2 0v-1h3v1a1 1 0 0 0 2 0v-1h2Z"></path>
-                </svg>
-              </button>
-            </div>
-            <div class="featured-products-card col-lg-6 col-12">
-              <button class="add-to-fav-button">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16.932"
-                  height="16"
-                  viewBox="0 0 16.932 16">
-                  <path
-                    d="M8.467 16a1.756 1.756 0 0 1-.94-.273c-.67-.422-6.576-4.254-7.425-8.776a6.154 6.154 0 0 1 1.27-4.977A5.177 5.177 0 0 1 5.356 0a4.369 4.369 0 0 1 3.111 1.086A4.185 4.185 0 0 1 11.577 0a5.18 5.18 0 0 1 3.983 1.973 6.157 6.157 0 0 1 1.269 4.977c-.849 4.522-6.755 8.354-7.426 8.777a1.753 1.753 0 0 1-.936.273ZM5.356 2A3.186 3.186 0 0 0 2.92 3.241a4.133 4.133 0 0 0-.853 3.341c.646 3.439 5.543 6.806 6.4 7.371.857-.565 5.754-3.932 6.4-7.371a4.136 4.136 0 0 0-.851-3.341A3.192 3.192 0 0 0 11.577 2a3.021 3.021 0 0 0-2.354 1.122 1 1 0 0 1-.756.346 1 1 0 0 1-.756-.345A3.024 3.024 0 0 0 5.356 2Z" />
-                </svg>
-              </button>
-              <div class="images-slider">
-                <div class="swiper productCardSlider">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <img
-                        src="https://dunker.qodeinteractive.com/wp-content/uploads/2023/01/main-home-product-24.jpg"
-                        alt="productImg" />
-                    </div>
-                    <div class="swiper-slide">Slide 2</div>
-                  </div>
-                  <div class="swiper-button-next"></div>
-                  <div class="swiper-button-prev"></div>
-                </div>
-              </div>
-              <div class="product-card-content">
-                <a href="#">Kickz</a>
-                <a href="#" class="product-title">Black Nike</a>
-                <a href="#" class="product-category">Fitness</a>
-                <span>$75</span>
-              </div>
-              <button class="add-to-basket-button">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="15"
-                  height="17"
-                  viewBox="0 0 15 17">
-                  <path
-                    d="M14 3.5h-3a3.5 3.5 0 0 0-7 0H1a1 1 0 0 0-1 1V15a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V4.5a1 1 0 0 0-1-1ZM7.5 2A1.5 1.5 0 0 1 9 3.5H6A1.5 1.5 0 0 1 7.5 2ZM13 15H2V5.5h2v1a1 1 0 0 0 2 0v-1h3v1a1 1 0 0 0 2 0v-1h2Z"></path>
-                </svg>
-              </button>
-            </div>
             <div class="featured-products-card col-lg-3 col-md-6 col-12">
               <button class="add-to-fav-button">
                 <svg
@@ -1019,96 +743,6 @@
           </div>
         </div>
       </section>
-      <!-- Trending Section End  -->
-
-      <!-- Categories Slider Section Start -->
-      <section id="categories-slider">
-        <div class="swiper categoriesSwiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="category-element">
-                <h5>ADIDAS</h5>
-                <div class="category-image">
-                  <img
-                    src="https://dunker.qodeinteractive.com/wp-content/uploads/2023/01/main-home-brand-7.jpg"
-                    alt="Adidas" />
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="category-element">
-                <h5>Nike</h5>
-                <div class="category-image">
-                  <img
-                    src="https://dunker.qodeinteractive.com/wp-content/uploads/2023/01/main-home-brand-2.jpg"
-                    alt="Nike" />
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="category-element">
-                <h5>North Face</h5>
-                <div class="category-image">
-                  <img
-                    src="https://dunker.qodeinteractive.com/wp-content/uploads/2023/01/main-home-brand-5.jpg"
-                    alt="North Face" />
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="category-element">
-                <h5>New Balance</h5>
-                <div class="category-image">
-                  <img
-                    src="https://dunker.qodeinteractive.com/wp-content/uploads/2023/01/main-home-brand-1.jpg"
-                    alt="New Balance" />
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="category-element">
-                <h5>PUMA</h5>
-                <div class="category-image">
-                  <img
-                    src="https://dunker.qodeinteractive.com/wp-content/uploads/2023/01/main-home-brand-3.jpg"
-                    alt="Puma" />
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="category-element">
-                <h5>Kickz</h5>
-                <div class="category-image">
-                  <img
-                    src="https://dunker.qodeinteractive.com/wp-content/uploads/2023/01/main-home-brand-7.jpg"
-                    alt="Kickz" />
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="category-element">
-                <h5>ADIDAS</h5>
-                <div class="category-image">
-                  <img
-                    src="https://dunker.qodeinteractive.com/wp-content/uploads/2023/01/main-home-brand-3.jpg"
-                    alt="Adidas" />
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="category-element">
-                <h5>Puma</h5>
-                <div class="category-image">
-                  <img
-                    src="https://dunker.qodeinteractive.com/wp-content/uploads/2023/01/main-home-brand-3.jpg"
-                    alt="Puma" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Categories Slider Section End -->
     </main>
     <!-- Main End -->
 
@@ -1303,25 +937,31 @@
       </div>
     </footer>
     <!-- Footer End -->
+
     <!-- SwiperJS -->
     <script src="https://player.vimeo.com/api/player.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./assets/js/productCardSlider.js"></script>
     <!-- Split Type  -->
     <script src="
-    https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js
-    "></script>
+  https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js
+  "></script>
     <!-- GSAP JS -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
       integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"></script>
+    <!-- Zoom Img Zoomist -->
+    <script src="https://cdn.jsdelivr.net/npm/zoomist@2/zoomist.umd.js"></script>
     <!-- axios cdn  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.1/axios.min.js"></script>
+    <!-- Zoom Image -->
+    <script src="./assets/js/zoomImg.js"></script>
+    <!-- Tab -->
+    <script src="./assets/js/tab.js"></script>
     <!-- generate card js  -->
     <script src="./assets/js/generateCard.js"></script>
-
     <script src="./assets/js/script.js"></script>
   </body>
 </html>

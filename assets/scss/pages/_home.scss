@@ -54,7 +54,6 @@
   }
 }
 
-
 @media screen and (max-width: 480px) {
   #featured {
     .featured-container {
@@ -73,9 +72,9 @@
 }
 // featured section end
 
-// featured-products section start 
+// featured-products section start
 #featured-products {
-  padding: 120px 70px;
+  padding: 80px 70px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -94,7 +93,7 @@
       position: relative;
     }
     button::after {
-      content: "";
+      content: '';
       height: 2px;
       background-color: black;
       width: 0;
@@ -157,10 +156,9 @@
 
       .swiper-slide img {
         display: block;
-        max-width: 290px;
+        max-width: 260px;
         object-fit: cover;
       }
-
 
       .product-card-content {
         display: flex;
@@ -186,10 +184,277 @@
     }
   }
 }
-// featured-products section end 
+// featured-products section end
+
+//Product Video Section Start
+#product-video {
+  background-image: url('https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/h1-video-img-1.jpg');
+  background-size: cover;
+  min-height: 500px;
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+    svg {
+      background: #000;
+      width: 100px;
+      height: 100px;
+      padding: 25px;
+      border-radius: 50%;
+      fill: #fff;
+    }
+  }
+  #video-container {
+    .remove-video {
+      color: #fff;
+      position: absolute;
+      top: 5%;
+      right: 5%;
+      font-size: 25px;
+      cursor: pointer;
+    }
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 15;
+  }
+
+  #video-frame {
+    width: 80%;
+    height: 80%;
+  }
+}
+//Product Video Section End
+
+// New Collections Start
+#new-collection {
+  padding: 85px 0;
+  .row {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .banner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .banner:nth-child(2) {
+    color: red;
+    .banner-title {
+      color: red;
+    }
+  }
+
+  .banner-container {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    transition: transform 0.4s ease;
+  }
+
+  .banner:hover .banner-container {
+    transform: translateY(-65px);
+    transition: transform 0.4s ease;
+  }
+
+  .banner-img {
+    .img-title {
+      padding: 12px 28px;
+      bottom: 0;
+      position: absolute;
+      right: 0;
+      left: 0;
+      width: 100%;
+
+      h3 {
+        font-size: 25px;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .banner-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 72px;
+    padding: 0 25px;
+    background: #fff;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+  }
+
+  h6 {
+    margin-bottom: 0;
+  }
+}
+// New Collections End
+
+// Categories Start
+#categories {
+  .categories-container {
+    padding: 0 70px;
+    .categories-content {
+      .category-item {
+        padding: 27px 33px 28px;
+        display: inline-flex;
+        text-align: center;
+
+        .category-title {
+          font-weight: 700;
+          text-transform: uppercase;
+          font-size: 77px;
+          position: relative;
+          white-space: nowrap;
+          .category-count {
+            position: absolute;
+            top: 0px;
+            right: -10px;
+            color: #727272;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  #categories {
+    .categories-container {
+      padding: 0 70px;
+      .categories-content {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        .category-item {
+          display: inline-flex;
+          border-bottom: 1px solid #ccc;
+          width: 100%;
+          justify-content: center;
+          align-items: center;
+          .category-title {
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 44px;
+
+            position: relative;
+            white-space: nowrap;
+            .category-count {
+              position: absolute;
+              top: 0px;
+              right: -10px;
+              color: #727272;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// Categories Start
+
+#banner {
+  padding: 120px 0;
+
+  .banner-new,
+  .banner-sale {
+    min-height: 80vh;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .banner-new {
+    background-image: url('https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/h1-img-3.jpg');
+    position: relative;
+    .new-title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      font-family: 'Gochi Hand', cursive;
+      font-size: 15rem;
+      text-align: center;
+    }
+  }
+
+  .banner-sale {
+    background-image: url('https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/h1-img-4.jpg');
+    max-width: 100%;
+
+    .sale-text {
+      font-size: 10rem;
+      display: inline-block;
+      width: 0;
+      height: 0;
+      font-family: 'Gochi Hand', cursive;
+    }
+
+    .sale-title {
+      padding: 100px 20px;
+    }
+
+    .discount {
+      padding: 35px 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  #banner {
+    .banner-new {
+      .new-title {
+        font-size: 10rem;
+        text-align: center;
+      }
+    }
+
+    .sale-title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: 100%;
+      width: 100%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    .banner-sale {
+      .sale-text {
+        display: block;
+        width: 100%;
+        height: 25%;
+        font-size: 8rem;
+      }
+      .discount {
+        padding: 20px 0px 40px 0px;
+      }
+    }
+  }
+}
+
 // Trending Start
 #trending {
-  padding: 120px 70px;
+  padding: 0 70px;
 
   .featured-products-container {
     .featured-products-card {
