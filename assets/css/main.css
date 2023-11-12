@@ -58,7 +58,7 @@ ol {
   max-width: 100%;
 }
 #street-vibe .street-title {
-  margin-left: 850px;
+  margin-left: auto;
   display: block;
   width: 366px;
 }
@@ -79,6 +79,13 @@ ol {
   display: inline-block;
 }
 
+@media only screen and (max-width: 768px) {
+  #street-vibe .street-title {
+    text-align: left;
+    margin-right: auto;
+    margin-left: 10px;
+  }
+}
 #elementor-section {
   border-collapse: collapse;
   display: flex;
@@ -87,6 +94,7 @@ ol {
   padding: 100px;
 }
 #elementor-section div {
+  text-align: center;
   border-collapse: collapse;
   border: 1px solid #ccc;
   transition: 0.3s;
@@ -106,12 +114,14 @@ ol {
 #content-section .content-bottom .services {
   display: flex;
   align-items: center;
-  width: 290px;
-}
-#content-section .content-bottom .services div {
-  padding: 0 30px;
+  padding: 25px 30px;
 }
 #content-section .content-bottom .services span {
   font-weight: 600;
   font-size: 17px;
+}
+#content-section .content-bottom .content-logo {
+  display: flex;
+  justify-content: center;
+  padding: 25px 30px;
 }/*# sourceMappingURL=main.css.map */

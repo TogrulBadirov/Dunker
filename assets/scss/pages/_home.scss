@@ -9,7 +9,7 @@
     display: flex;
     max-width: 100%;
     .street-title{
-        margin-left: 850px;
+        margin-left: auto;
         display: block;
         width: 366px;
         h2{
@@ -38,6 +38,15 @@
     }
 
 }
+@media only screen and (max-width: 768px) {
+    #street-vibe {
+    .street-title{
+        text-align: left;
+        margin-right: auto;
+        margin-left: 10px;
+    }
+    }
+  }
 #elementor-section{
     border-collapse: collapse;
     display: flex;
@@ -45,6 +54,7 @@
    align-items: center;
 padding: 100px;
 div{
+    text-align: center;
     border-collapse: collapse;
  border: 1px solid #ccc;
 transition: .3s; 
@@ -65,17 +75,22 @@ border: 1px solid black;
         .services{
         display: flex;
         align-items: center;
-        width: 290px;
-
-        div{
-         padding: 0 30px;   
-        }
+        padding: 25px  30px;   
+        
+         
+        
         
         span{
             font-weight: 600;
             font-size: 17px;
         }
         }
+        .content-logo{
+            display: flex;
+            justify-content: center;
+            padding: 25px  30px; 
+        }
 
     }
+
 }
