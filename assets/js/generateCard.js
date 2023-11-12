@@ -1,173 +1,262 @@
 const featuredProductsContainer = document.querySelector(
-  "#featured-products .featured-products-container .row"
-);
+  '#featured-products .featured-products-container .row'
+)
 
 const trendingProductsContainer = document.querySelector(
-  "#trending .featured-products-container .row"
-);
+  '#trending .featured-products-container .row'
+)
 
 const featuredContainer = document.querySelector(
-  "#featured .featured-container .row"
-);
-const countBasket = document.querySelectorAll(".count-basket");
-let bascetArr = JSON.parse(localStorage.getItem("basket")) || [];
+  '#featured .featured-container .row'
+)
+
+const countBasket = document.querySelectorAll('.count-basket')
+let bascetArr = JSON.parse(localStorage.getItem('basket')) || []
+let wishListArr = JSON.parse(localStorage.getItem('wishlist')) || []
 
 const basketTotal = document.querySelector('.basket-total .amount')
 
 const filterBtn = document.querySelectorAll('#featured-products .filter-btn')
 const showAllBtn = document.querySelector('#featured-products .show-all-btn')
 
-countBasket.forEach((item) => {
-  item.innerHTML = calculateBasketcount();
-});
-basketTotal.innerHTML = '$' + calculateSubTotal();
+countBasket.forEach(item => {
+  item.innerHTML = calculateBasketcount()
+})
+basketTotal.innerHTML = '$' + calculateSubTotal()
 
 async function getData() {
-  const response = await axios.get("http://localhost:3000/products");
+  const response = await axios.get('http://localhost:3000/products')
   //generating FEATURED PRODUCTS
-  response.data.forEach((element) => {
-    if (element.type === "featured") {
-        let card = generateCard(element);
+  response.data.forEach(element => {
+    if (element.type === 'featured') {
+      let card = generateCard(element)
 
-    let addToBasketBtn = card.querySelector(".add-to-basket-button");
+      let addToBasketBtn = card.querySelector('.add-to-basket-button')
+      let addToWishListBtn = card.querySelector('.add-to-fav-button')
 
-    addToBasketBtn.addEventListener("click", () => {
-        
-    // bascetArr = JSON.parse(localStorage.getItem("basket")) || [];
+      addToBasketBtn.addEventListener('click', () => {
+        // bascetArr = JSON.parse(localStorage.getItem("basket")) || [];
         // console.log(bascetArr);
-      let indexOfProduct = bascetArr.findIndex((x) => x.id === element.id);
+        let indexOfProduct = bascetArr.findIndex(x => x.id === element.id)
 
-      if (indexOfProduct >= 0) {
-        bascetArr[indexOfProduct].count++;
-      } else {
-        element.count = 1;
-        bascetArr.push(element);
-        
-      }
-      basketProducts.innerHTML=''
-    //   bascetArr = JSON.parse(localStorage.getItem("basket")) || [];
-      
-      bascetArr.forEach(element => {
-        // bascetArr = JSON.parse(localStorage.getItem("basket"))
-        let basketElement = generateBasketElements(element)
-        basketProducts.appendChild(basketElement)
-    });
+        if (indexOfProduct >= 0) {
+          bascetArr[indexOfProduct].count++
+        } else {
+          element.count = 1
+          bascetArr.push(element)
+        }
+        basketProducts.innerHTML = ''
+        //   bascetArr = JSON.parse(localStorage.getItem("basket")) || [];
 
-      countBasket.forEach((item) => {
-        item.innerHTML = calculateBasketcount();
-      });
-      basketTotal.innerHTML = '$' + calculateSubTotal();
+        bascetArr.forEach(element => {
+          // bascetArr = JSON.parse(localStorage.getItem("basket"))
+          let basketElement = generateBasketElements(element)
+          basketProducts.appendChild(basketElement)
+        })
 
-      localStorage.setItem("basket", JSON.stringify(bascetArr));
-    });
-    featuredProductsContainer.appendChild(card);
+        countBasket.forEach(item => {
+          item.innerHTML = calculateBasketcount()
+        })
+        basketTotal.innerHTML = '$' + calculateSubTotal()
+
+        localStorage.setItem('basket', JSON.stringify(bascetArr))
+        Swal.fire({
+          icon: 'success',
+          title: 'Added to Basket',
+          text: `${element.title} has been added to your basket.`,
+          showConfirmButton: false,
+          timer: 1500
+        })
+      })
+      featuredProductsContainer.appendChild(card)
+
+      addToWishListBtn.addEventListener('click', () => {
+        const findWishListProduct = wishListArr.find(x => x.id === element.id)
+        if (!findWishListProduct) {
+          wishListArr.push(element)
+          localStorage.setItem('wishlist', JSON.stringify(wishListArr))
+          addToWishListBtn.classList.add('active')
+          Swal.fire({
+            icon: 'success',
+            title: 'Added to WishList',
+            text: `${element.title} has been added to your basket.`,
+            showConfirmButton: false,
+            timer: 1500
+          })
+        } else {
+          Swal.fire({
+            icon: 'info',
+            title: 'Already in Wishlist',
+            text: `${element.title} is already in your wishlist.`,
+            showConfirmButton: false,
+            timer: 1500
+          })
+        }
+      })
     }
-  });
+  })
 
-  //generating TRENDING 
+  //generating TRENDING
   let cardCount = 1
-  response.data.forEach((element) => {
+  response.data.forEach(element => {
     if (element.type === 'trending') {
-        let card = generateTrendingCard(element,cardCount);
+      let card = generateTrendingCard(element, cardCount)
 
-    let addToBasketBtn = card.querySelector(".add-to-basket-button");
+      let addToBasketBtn = card.querySelector('.add-to-basket-button')
+      let addToWishListBtn = card.querySelector('.add-to-fav-button')
+      addToBasketBtn.addEventListener('click', () => {
+        let indexOfProduct = bascetArr.findIndex(x => x.id === element.id)
 
-    addToBasketBtn.addEventListener("click", () => {
-      let indexOfProduct = bascetArr.findIndex((x) => x.id === element.id);
+        if (indexOfProduct >= 0) {
+          bascetArr[indexOfProduct].count++
+        } else {
+          element.count = 1
+          bascetArr.push(element)
+        }
+        basketProducts.innerHTML = ''
+        bascetArr.forEach(element => {
+          let basketElement = generateBasketElements(element)
+          basketProducts.appendChild(basketElement)
+        })
 
-      if (indexOfProduct >= 0) {
-        bascetArr[indexOfProduct].count++;
-      } else {
-        element.count = 1;
-        bascetArr.push(element);
-      }
-      basketProducts.innerHTML=''
-      bascetArr.forEach(element => {
-        
-        let basketElement = generateBasketElements(element)
-        basketProducts.appendChild(basketElement)
-    });
+        countBasket.forEach(item => {
+          item.innerHTML = calculateBasketcount()
+        })
+        basketTotal.innerHTML = '$' + calculateSubTotal()
 
-      countBasket.forEach((item) => {
-        item.innerHTML = calculateBasketcount();
-      });
-      basketTotal.innerHTML = '$' + calculateSubTotal();
+        localStorage.setItem('basket', JSON.stringify(bascetArr))
+        Swal.fire({
+          icon: 'success',
+          title: 'Added to Basket',
+          text: `${element.title} has been added to your basket.`,
+          showConfirmButton: false,
+          timer: 1500
+        })
+      })
 
-      localStorage.setItem("basket", JSON.stringify(bascetArr));
-    });
-    trendingProductsContainer.appendChild(card);
-    cardCount++
+      addToWishListBtn.addEventListener('click', () => {
+        console.log('eh')
+        const findWishListProduct = wishListArr.find(x => x.id === element.id)
+        if (!findWishListProduct) {
+          wishListArr.push(element)
+          localStorage.setItem('wishlist', JSON.stringify(wishListArr))
+          Swal.fire({
+            icon: 'success',
+            title: 'Added to Wishlist',
+            text: `${element.title} has been added to your basket.`,
+            showConfirmButton: false,
+            timer: 1500
+          })
+        } else {
+          Swal.fire({
+            icon: 'info',
+            title: 'Already in Wishlist',
+            text: `${element.title} is already in your wishlist.`,
+            showConfirmButton: false,
+            timer: 1500
+          })
+        }
+      })
+      trendingProductsContainer.appendChild(card)
+      cardCount++
     }
-    
-  });
+  })
 
   //generating featuredCards
   let textCount = 0
-  response.data.forEach((element) => {
+  response.data.forEach(element => {
     if (element.type === 'newColection') {
-    let card = generateFeaturedCard(element,textCount);
+      let card = generateFeaturedCard(element, textCount)
 
-    let addToBasketBtn = card.querySelector(".add-to-basket-button");
+      let addToBasketBtn = card.querySelector('.add-to-basket-button')
+      let addToWishListBtn = card.querySelector('.add-to-fav-button')
 
-    addToBasketBtn.addEventListener("click", () => {
-      let indexOfProduct = bascetArr.findIndex((x) => x.id === element.id);
+      addToBasketBtn.addEventListener('click', () => {
+        let indexOfProduct = bascetArr.findIndex(x => x.id === element.id)
 
-      if (indexOfProduct >= 0) {
-        bascetArr[indexOfProduct].count++;
-      } else {
-        element.count = 1;
-        bascetArr.push(element);
-      }
-      basketProducts.innerHTML=''
-      bascetArr.forEach(element => {
-        
-        let basketElement = generateBasketElements(element)
-        basketProducts.appendChild(basketElement)
-    });
+        if (indexOfProduct >= 0) {
+          bascetArr[indexOfProduct].count++
+        } else {
+          element.count = 1
+          bascetArr.push(element)
+        }
+        basketProducts.innerHTML = ''
+        bascetArr.forEach(element => {
+          let basketElement = generateBasketElements(element)
+          basketProducts.appendChild(basketElement)
+        })
 
-      countBasket.forEach((item) => {
-        item.innerHTML = calculateBasketcount();
-      });
-      basketTotal.innerHTML = '$' + calculateSubTotal();
+        countBasket.forEach(item => {
+          item.innerHTML = calculateBasketcount()
+        })
+        basketTotal.innerHTML = '$' + calculateSubTotal()
 
-      localStorage.setItem("basket", JSON.stringify(bascetArr));
-    });
-    featuredContainer.appendChild(card);
-    textCount++
+        localStorage.setItem('basket', JSON.stringify(bascetArr))
+        Swal.fire({
+          icon: 'success',
+          title: 'Added to Basket',
+          text: `${element.title} has been added to your basket.`,
+          showConfirmButton: false,
+          timer: 1500
+        })
+      })
+      featuredContainer.appendChild(card)
+
+      addToWishListBtn.addEventListener('click', () => {
+        const findWishListProduct = wishListArr.find(x => x.id === element.id)
+        if (!findWishListProduct) {
+          wishListArr.push(element)
+          localStorage.setItem('wishlist', JSON.stringify(wishListArr))
+          Swal.fire({
+            icon: 'success',
+            title: 'Added to WishList',
+            text: `${element.title} has been added to your basket.`,
+            showConfirmButton: false,
+            timer: 1500
+          })
+        } else {
+          Swal.fire({
+            icon: 'info',
+            title: 'Already in Wishlist',
+            text: `${element.title} is already in your wishlist.`,
+            showConfirmButton: false,
+            timer: 1500
+          })
+        }
+      })
+
+      textCount++
     }
-    
-  });
+  })
 
   //
-  var swiper = new Swiper(".productCardSlider", {
+  var swiper = new Swiper('.productCardSlider', {
     slidesPerView: 1,
     spaceBetween: 30,
     loop: true,
     pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
+      el: '.swiper-pagination',
+      clickable: true
     },
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    }
+  })
 }
 
-getData();
+getData()
 
-function generateFeaturedCard(product,count) {
-  let card = document.createElement("div");
+function generateFeaturedCard(product, count) {
+  let card = document.createElement('div')
 
-  card.classList.add(
-    "product-card",
-    "col-lg-6",
-    "col-md-12"
-  );
-  card.setAttribute('data',product.category)
+  card.classList.add('product-card', 'col-lg-6', 'col-md-12')
+  card.setAttribute('data', product.category)
   card.innerHTML = `
 
-  <span id="${count!==0?"featured-text":""}">${count===0?"Featured":"New Collection"}</span>
+  <span id="${count !== 0 ? 'featured-text' : ''}">${
+    count === 0 ? 'Featured' : 'New Collection'
+  }</span>
   <img
     src="${product.image[0]}"
     alt="product"
@@ -205,26 +294,21 @@ function generateFeaturedCard(product,count) {
     </svg>
   </button>
 
-                    `;
+                    `
 
-  return card;
+  return card
 }
 function generateCard(product) {
-  let card = document.createElement("div");
+  let card = document.createElement('div')
 
-  card.classList.add(
-    "featured-products-card",
-    "col-lg-3",
-    "col-md-6",
-    "col-12"
-  );
-  card.setAttribute('data',product.category)
+  card.classList.add('featured-products-card', 'col-lg-3', 'col-md-6', 'col-12')
+  card.setAttribute('data', product.category)
   card.innerHTML = `
-    <span class="${product.status === "new" ? "new-product-icon" : ""}">${
-    product.status === "new" ? product.status : ""
+    <span class="${product.status === 'new' ? 'new-product-icon' : ''}">${
+    product.status === 'new' ? product.status : ''
   }</span>
-    <span class="${product.status === "sale" ? "sale-product-icon" : ""}">${
-    product.status === "sale" ? product.status : ""
+    <span class="${product.status === 'sale' ? 'sale-product-icon' : ''}">${
+    product.status === 'sale' ? product.status : ''
   }</span>
     <button class="add-to-fav-button">
       <svg
@@ -289,7 +373,7 @@ function generateCard(product) {
       }</span>
       
       <span style="color:#727272;text-decoration: line-through;">${
-        product.discount !== undefined ? "$" + product.price : ""
+        product.discount !== undefined ? '$' + product.price : ''
       }</span>
       </div>
     </div>
@@ -306,35 +390,30 @@ function generateCard(product) {
         ></path>
       </svg>
     </button>
-                    `;
+                    `
 
-  return card;
+  return card
 }
-function generateTrendingCard(product,count) {
-  let card = document.createElement("div");
-console.log(count,'count');
+function generateTrendingCard(product, count) {
+  let card = document.createElement('div')
+  console.log(count, 'count')
   if (count === 3 || count === 4) {
+    card.classList.add('featured-products-card', 'col-lg-6', 'col-12')
+  } else {
     card.classList.add(
-        "featured-products-card",
-        "col-lg-6",
-        "col-12"
-      );
+      'featured-products-card',
+      'col-lg-3',
+      'col-md-6',
+      'col-12'
+    )
   }
-  else{
-    card.classList.add(
-        "featured-products-card",
-        "col-lg-3",
-        "col-md-6",
-        "col-12"
-      );
-  }
-  card.setAttribute('data',product.category)
+  card.setAttribute('data', product.category)
   card.innerHTML = `
-    <span class="${product.status === "new" ? "new-product-icon" : ""}">${
-    product.status === "new" ? product.status : ""
+    <span class="${product.status === 'new' ? 'new-product-icon' : ''}">${
+    product.status === 'new' ? product.status : ''
   }</span>
-    <span class="${product.status === "sale" ? "sale-product-icon" : ""}">${
-    product.status === "sale" ? product.status : ""
+    <span class="${product.status === 'sale' ? 'sale-product-icon' : ''}">${
+    product.status === 'sale' ? product.status : ''
   }</span>
     <button class="add-to-fav-button">
       <svg
@@ -399,7 +478,7 @@ console.log(count,'count');
       }</span>
       
       <span style="color:#727272;text-decoration: line-through;">${
-        product.discount !== undefined ? "$" + product.price : ""
+        product.discount !== undefined ? '$' + product.price : ''
       }</span>
       </div>
     </div>
@@ -416,49 +495,52 @@ console.log(count,'count');
         ></path>
       </svg>
     </button>
-                    `;
+                    `
 
-  return card;
+  return card
 }
 
 function calculateBasketcount() {
-  let totalBasketCount = 0;
-  bascetArr.forEach((item) => {
-    totalBasketCount += item.count;
-  });
-  return totalBasketCount;
+  let totalBasketCount = 0
+  bascetArr.forEach(item => {
+    totalBasketCount += item.count
+  })
+  return totalBasketCount
 }
 
 function calculateSubTotal() {
-  let subTotal = 0;
-  bascetArr.forEach((item) => {
+  let subTotal = 0
+  bascetArr.forEach(item => {
     if (item.discount === undefined) {
-      subTotal += item.price * item.count;
+      subTotal += item.price * item.count
     } else {
-      subTotal += item.price * ((100 - item.discount) / 100) * item.count;
+      subTotal += item.price * ((100 - item.discount) / 100) * item.count
     }
-  });
+  })
   return subTotal
 }
 
 filterBtn.forEach(element => {
-    element.addEventListener('click', () => {
-        let buttonCategory = element.getAttribute('data');
-        let cards = featuredProductsContainer.querySelectorAll('.featured-products-card');
-        cards.forEach(item => {
-            let cardCategory = item.getAttribute('data');
-            if (buttonCategory === cardCategory) {
-                item.style.display = 'block';
-            } else {
-                item.style.display = 'none';
-            }
-        });
-    });
-});
-showAllBtn.addEventListener('click',()=>{
-        let cards = featuredProductsContainer.querySelectorAll('.featured-products-card');
-        cards.forEach(item => {
-            item.style.display = 'block';
-        });
+  element.addEventListener('click', () => {
+    let buttonCategory = element.getAttribute('data')
+    let cards = featuredProductsContainer.querySelectorAll(
+      '.featured-products-card'
+    )
+    cards.forEach(item => {
+      let cardCategory = item.getAttribute('data')
+      if (buttonCategory === cardCategory) {
+        item.style.display = 'block'
+      } else {
+        item.style.display = 'none'
+      }
+    })
+  })
 })
-    
+showAllBtn.addEventListener('click', () => {
+  let cards = featuredProductsContainer.querySelectorAll(
+    '.featured-products-card'
+  )
+  cards.forEach(item => {
+    item.style.display = 'block'
+  })
+})

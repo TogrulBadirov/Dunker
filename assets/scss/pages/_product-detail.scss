@@ -1,3 +1,4 @@
+// Detail Product Section Start
 #detail-product {
   padding: 70px 50px 30px 50px;
 
@@ -175,7 +176,9 @@
     }
   }
 }
+// Detail Product Section End
 
+//Related Products Section Start
 #related-products {
   padding: 40px 50px;
   h2 {
@@ -262,6 +265,7 @@
     }
   }
 }
+//Related Products Section End
 
 @media screen and (max-width: 768px) {
   h1 {

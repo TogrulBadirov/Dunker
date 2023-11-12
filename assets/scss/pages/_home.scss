@@ -53,31 +53,11 @@
     }
   }
 }
-
-@media screen and (max-width: 480px) {
-  #featured {
-    .featured-container {
-      .row {
-        .product-card {
-          .product-card-details {
-            max-width: 100%;
-            max-height: 100%;
-            top: 0;
-            left: 0;
-          }
-        }
-      }
-    }
-  }
-}
 // featured section end
 
 // featured-products section start
 #featured-products {
   padding: 80px 70px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   .featured-products-content {
     h2 {
       padding-bottom: 20px;
@@ -85,6 +65,7 @@
   }
   .featured-products-filter {
     display: flex;
+    justify-content: center;
     gap: 32px;
     margin-bottom: 35px;
     button {
@@ -110,7 +91,6 @@
     .featured-products-card {
       position: relative;
       box-sizing: border-box;
-      max-width: 350px;
       max-height: 600px;
       border: 1px solid #cacaca;
       outline: 1px solid transparent;
@@ -156,7 +136,7 @@
 
       .swiper-slide img {
         display: block;
-        max-width: 260px;
+        max-width: 240px;
         object-fit: cover;
       }
 
@@ -190,12 +170,16 @@
 #product-video {
   background-image: url('https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/h1-video-img-1.jpg');
   background-size: cover;
+  background-position: center;
   min-height: 500px;
+  position: relative;
+  top: 0;
+  bottom: 0;
   a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     svg {
       background: #000;
       width: 100px;
@@ -234,10 +218,10 @@
 }
 //Product Video Section End
 
-// New Collections Start
+// New Collections Section Start
 #new-collection {
   padding: 40px 0;
-  .section-container{
+  .section-container {
     padding: 0 70px;
   }
   .row {
@@ -305,9 +289,9 @@
     margin-bottom: 0;
   }
 }
-// New Collections End
+// New Collections Section End
 
-// Categories Start
+// Categories Section Start
 #categories {
   .categories-container {
     padding: 0 70px;
@@ -335,44 +319,9 @@
     }
   }
 }
+// Categories Section End
 
-@media only screen and (max-width: 992px) {
-  #categories {
-    .categories-container {
-      padding: 0 70px;
-      .categories-content {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        .category-item {
-          display: inline-flex;
-          border-bottom: 1px solid #ccc;
-          width: 100%;
-          justify-content: center;
-          align-items: center;
-          .category-title {
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 44px;
-
-            position: relative;
-            white-space: nowrap;
-            .category-count {
-              position: absolute;
-              top: 0px;
-              right: -10px;
-              color: #727272;
-              font-size: 14px;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-// Categories Start
-
+// Banner Section Start
 #banner {
   padding-top: 60px;
 
@@ -422,43 +371,12 @@
     }
   }
 }
-
-@media only screen and (max-width: 992px) {
-  #banner {
-    .banner-new {
-      .new-title {
-        font-size: 10rem;
-        text-align: center;
-      }
-    }
-
-    .sale-title {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      height: 100%;
-      width: 100%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-    }
-    .banner-sale {
-      .sale-text {
-        display: block;
-        width: 100%;
-        height: 25%;
-        font-size: 8rem;
-      }
-      .discount {
-        padding: 20px 0px 40px 0px;
-      }
-    }
-  }
-}
+// Banner Section End
 
 // Trending Start
 #trending {
   padding: 0 70px;
-  .section-title{
+  .section-title {
     padding: 0 0 50px 0;
   }
   .featured-products-container {
@@ -573,70 +491,161 @@
   }
 }
 // Categories Slider End
-#street-vibe{
-    background-image: url("https://dunker.qodeinteractive.com/wp-content/uploads/2023/01/h1-parallax-img-001.jpg");
-    min-height: 700px;;
-    background-position: center;    
-    background-size: cover;
-    min-height: 700px;
-    justify-content: center;
-    flex-direction: column;
-    display: flex;
-    max-width: 100%;
-    .street-title{
-      padding-right: 40px;
-        margin-left: auto;
-        display: block;
-        width: 366px;
-        h2{
-            font-weight: 700;
-            color: black;
-            font-size: 60px;
-        }
-        span{
-            font-family: sans-serif;
-            font-size: 11px;
-            text-transform: uppercase;
-            font-weight: bold;
-            color: gray;
 
-        }
-           .custom-button{
-            margin-top: 20px;
-            display: inline-block
-           }
-           
-            
-          
-            
-        
-       
+// Street Vibe Section Start
+#street-vibe {
+  background-image: url('https://dunker.qodeinteractive.com/wp-content/uploads/2023/01/h1-parallax-img-001.jpg');
+  min-height: 700px;
+  background-position: center;
+  background-size: cover;
+  min-height: 700px;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  max-width: 100%;
+  .street-title {
+    padding-right: 40px;
+    margin-left: auto;
+    display: block;
+    width: 366px;
+    h2 {
+      font-weight: 700;
+      color: black;
+      font-size: 60px;
     }
-
-}
-@media only screen and (max-width: 768px) {
-    #street-vibe {
-    .street-title{
-        text-align: left;
-        margin-right: auto;
-        margin-left: 10px;
+    span {
+      font-family: sans-serif;
+      font-size: 11px;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: gray;
     }
+    .custom-button {
+      margin-top: 20px;
+      display: inline-block;
     }
   }
-#elementor-section{
-    border-collapse: collapse;
-    display: flex;
-   justify-content: center;
-   align-items: center;
-padding: 100px;
-div{
+}
+// Street Vibe Section End
+
+// Elementor Section Start
+#elementor-section {
+  border-collapse: collapse;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+  div {
     text-align: center;
     border-collapse: collapse;
- border: 1px solid #ccc;
-transition: .3s; 
+    border: 1px solid #ccc;
+    transition: 0.3s;
+  }
+  div:hover {
+    border: 1px solid black;
+  }
 }
-div:hover{
-border: 1px solid black;
+// Elementor Section End
 
+//Media Queries//
+@media screen and (max-width: 480px) {
+  //Featured Section
+  #featured {
+    .featured-container {
+      .row {
+        .product-card {
+          .product-card-details {
+            max-width: 100%;
+            max-height: 100%;
+            top: 0;
+            left: 0;
+          }
+        }
+      }
+    }
+  }
 }
+
+@media only screen and (max-width: 768px) {
+  // Product Video Section
+  #product-video {
+    min-height: 250px;
+  }
+
+  // Street Vibe Section
+  #street-vibe {
+    .street-title {
+      text-align: left;
+      margin-right: auto;
+      margin-left: 10px;
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  //Banner Section
+  #banner {
+    .banner-new {
+      .new-title {
+        font-size: 10rem;
+        text-align: center;
+      }
+    }
+
+    .sale-title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: 100%;
+      width: 100%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    .banner-sale {
+      .sale-text {
+        display: block;
+        width: 100%;
+        height: 25%;
+        font-size: 8rem;
+      }
+      .discount {
+        padding: 20px 0px 40px 0px;
+      }
+    }
+  }
+
+  //Categories Section
+  #categories {
+    .categories-container {
+      padding: 0 70px;
+      .categories-content {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        .category-item {
+          display: inline-flex;
+          border-bottom: 1px solid #ccc;
+          width: 100%;
+          justify-content: center;
+          align-items: center;
+          .category-title {
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 44px;
+
+            position: relative;
+            white-space: nowrap;
+            .category-count {
+              position: absolute;
+              top: 0px;
+              right: -10px;
+              color: #727272;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
 }

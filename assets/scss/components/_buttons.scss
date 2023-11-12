@@ -38,6 +38,10 @@
   cursor: pointer;
   z-index: 10;
   transition: 0.4s ease-in;
+  &.active {
+    fill: white;
+    background-color: black;
+  }
 }
 .add-to-fav-button:hover {
   fill: white;

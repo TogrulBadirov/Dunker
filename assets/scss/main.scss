@@ -1,16 +1,17 @@
+//Base
 @import './base/reset.scss';
 @import './base/typography.scss';
-
+//Components
 @import './components/breadcrumb';
 @import './components/sidebars';
 @import './components/buttons.scss';
 @import './components/carousel.scss';
 @import './components/title.scss';
-
+//Layout
 @import './layout/footer.scss';
 @import './layout/header.scss';
 @import './layout/navigation.scss';
-
+//Pages
 @import './pages/home.scss';
 @import './pages/product-detail';
 @import './pages/wishlist';
