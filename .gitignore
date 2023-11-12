@@ -1,5 +1,5 @@
 # Ignore CSS files
-*.css
+main.css
 
 # Ignore CSS map files
-*.css.map
+main.css.map
