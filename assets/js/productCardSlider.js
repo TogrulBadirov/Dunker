@@ -11,3 +11,4 @@ var swiper = new Swiper(".productCardSlider", {
       prevEl: ".swiper-button-prev",
     },
   });
+  

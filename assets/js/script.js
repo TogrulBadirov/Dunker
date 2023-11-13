@@ -146,7 +146,6 @@ basketBtn.addEventListener('click', e => {
 
 basketMobileBtn.addEventListener('click', e => {
   e.preventDefault()
-  console.log(e.target)
   basketMenu.classList.toggle('active')
 })
 

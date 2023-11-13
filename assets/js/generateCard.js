@@ -25,7 +25,8 @@ countBasket.forEach(item => {
 basketTotal.innerHTML = '$' + calculateSubTotal()
 
 async function getData() {
-  const response = await axios.get('http://localhost:3000/products')
+  try {
+    const response = await axios.get("http://localhost:3000/products");
   //generating FEATURED PRODUCTS
   response.data.forEach(element => {
     if (element.type === 'featured') {
@@ -34,9 +35,8 @@ async function getData() {
       let addToBasketBtn = card.querySelector('.add-to-basket-button')
       let addToWishListBtn = card.querySelector('.add-to-fav-button')
 
-      addToBasketBtn.addEventListener('click', () => {
-        // bascetArr = JSON.parse(localStorage.getItem("basket")) || [];
-        // console.log(bascetArr);
+      addToBasketBtn.addEventListener('click', (e) => {
+        e.preventDefault()
         let indexOfProduct = bascetArr.findIndex(x => x.id === element.id)
 
         if (indexOfProduct >= 0) {
@@ -46,10 +46,10 @@ async function getData() {
           bascetArr.push(element)
         }
         basketProducts.innerHTML = ''
-        //   bascetArr = JSON.parse(localStorage.getItem("basket")) || [];
+
 
         bascetArr.forEach(element => {
-          // bascetArr = JSON.parse(localStorage.getItem("basket"))
+
           let basketElement = generateBasketElements(element)
           basketProducts.appendChild(basketElement)
         })
@@ -70,7 +70,8 @@ async function getData() {
       })
       featuredProductsContainer.appendChild(card)
 
-      addToWishListBtn.addEventListener('click', () => {
+      addToWishListBtn.addEventListener('click', (e) => {
+        e.preventDefault()
         const findWishListProduct = wishListArr.find(x => x.id === element.id)
         if (!findWishListProduct) {
           wishListArr.push(element)
@@ -134,12 +135,13 @@ async function getData() {
         })
       })
 
-      addToWishListBtn.addEventListener('click', () => {
-        console.log('eh')
+      addToWishListBtn.addEventListener('click', (e) => {
+        e.preventDefault()
         const findWishListProduct = wishListArr.find(x => x.id === element.id)
         if (!findWishListProduct) {
           wishListArr.push(element)
           localStorage.setItem('wishlist', JSON.stringify(wishListArr))
+          addToWishListBtn.classList.add('active')
           Swal.fire({
             icon: 'success',
             title: 'Added to Wishlist',
@@ -157,7 +159,11 @@ async function getData() {
           })
         }
       })
-      trendingProductsContainer.appendChild(card)
+      try {
+        trendingProductsContainer.appendChild(card);
+      } catch (error) {
+        
+      }
       cardCount++
     }
   })
@@ -207,6 +213,7 @@ async function getData() {
         if (!findWishListProduct) {
           wishListArr.push(element)
           localStorage.setItem('wishlist', JSON.stringify(wishListArr))
+          addToWishListBtn.classList.add('active')
           Swal.fire({
             icon: 'success',
             title: 'Added to WishList',
@@ -239,10 +246,13 @@ async function getData() {
       clickable: true
     },
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
-    }
-  })
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+  } catch (error) {
+    
+  }
 }
 
 getData()
@@ -253,10 +263,8 @@ function generateFeaturedCard(product, count) {
   card.classList.add('product-card', 'col-lg-6', 'col-md-12')
   card.setAttribute('data', product.category)
   card.innerHTML = `
-
-  <span id="${count !== 0 ? 'featured-text' : ''}">${
-    count === 0 ? 'Featured' : 'New Collection'
-  }</span>
+<a href="./product-detail.html?id=${product.id}">
+  <span id="${count!==0?"featured-text":""}">${count===0?"Featured":"New Collection"}</span>
   <img
     src="${product.image[0]}"
     alt="product"
@@ -293,8 +301,8 @@ function generateFeaturedCard(product, count) {
       ></path>
     </svg>
   </button>
-
-                    `
+</a>
+                    `;
 
   return card
 }
@@ -304,8 +312,9 @@ function generateCard(product) {
   card.classList.add('featured-products-card', 'col-lg-3', 'col-md-6', 'col-12')
   card.setAttribute('data', product.category)
   card.innerHTML = `
-    <span class="${product.status === 'new' ? 'new-product-icon' : ''}">${
-    product.status === 'new' ? product.status : ''
+  <a href="./product-detail.html?id=${product.id}">
+    <span class="${product.status === "new" ? "new-product-icon" : ""}">${
+    product.status === "new" ? product.status : ""
   }</span>
     <span class="${product.status === 'sale' ? 'sale-product-icon' : ''}">${
     product.status === 'sale' ? product.status : ''
@@ -390,13 +399,14 @@ function generateCard(product) {
         ></path>
       </svg>
     </button>
-                    `
+    </a>
+                    `;
 
   return card
 }
 function generateTrendingCard(product, count) {
   let card = document.createElement('div')
-  console.log(count, 'count')
+
   if (count === 3 || count === 4) {
     card.classList.add('featured-products-card', 'col-lg-6', 'col-12')
   } else {
@@ -409,8 +419,9 @@ function generateTrendingCard(product, count) {
   }
   card.setAttribute('data', product.category)
   card.innerHTML = `
-    <span class="${product.status === 'new' ? 'new-product-icon' : ''}">${
-    product.status === 'new' ? product.status : ''
+  <a href="./product-detail.html?id=${product.id}">
+    <span class="${product.status === "new" ? "new-product-icon" : ""}">${
+    product.status === "new" ? product.status : ""
   }</span>
     <span class="${product.status === 'sale' ? 'sale-product-icon' : ''}">${
     product.status === 'sale' ? product.status : ''
@@ -495,7 +506,8 @@ function generateTrendingCard(product, count) {
         ></path>
       </svg>
     </button>
-                    `
+    </a>
+                    `;
 
   return card
 }
@@ -521,26 +533,36 @@ function calculateSubTotal() {
 }
 
 filterBtn.forEach(element => {
-  element.addEventListener('click', () => {
-    let buttonCategory = element.getAttribute('data')
-    let cards = featuredProductsContainer.querySelectorAll(
-      '.featured-products-card'
-    )
+    element.addEventListener('click', () => {
+        let buttonCategory = element.getAttribute('data');
+        let cards = featuredProductsContainer.querySelectorAll('.featured-products-card');
+        cards.forEach(item => {
+            let cardCategory = item.getAttribute('data');
+            if (buttonCategory === cardCategory) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
+});
+try {
+  showAllBtn.addEventListener('click',()=>{
+    let cards = featuredProductsContainer.querySelectorAll('.featured-products-card');
     cards.forEach(item => {
-      let cardCategory = item.getAttribute('data')
-      if (buttonCategory === cardCategory) {
-        item.style.display = 'block'
-      } else {
-        item.style.display = 'none'
-      }
-    })
-  })
+        item.style.display = 'block';
+    });
 })
-showAllBtn.addEventListener('click', () => {
-  let cards = featuredProductsContainer.querySelectorAll(
-    '.featured-products-card'
-  )
-  cards.forEach(item => {
-    item.style.display = 'block'
-  })
-})
+} catch (error) {
+  
+}
+    
+const categoryItem = document.querySelectorAll('.category-items');
+categoryItem.forEach(element => {
+  element.addEventListener('mousemove', function(e) {
+  const productOffset = element.getBoundingClientRect();
+  const categoryImage = element.querySelector('.product-image');
+  categoryImage.style.left = e.pageX  + 'px';
+  categoryImage.style.top = e.pageY + 'px';
+},100);
+});

@@ -11,6 +11,5 @@ let galleryImages = document.querySelectorAll('.gallery-img')
 galleryImages.forEach(item => {
   item.addEventListener('click', e => {
     mainImg.src = item.src
-    console.log(item.getAttribute('src'))
   })
 })

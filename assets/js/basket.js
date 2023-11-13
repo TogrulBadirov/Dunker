@@ -79,6 +79,6 @@ function generateBasketElements(product) {
       basketProducts.appendChild(basketElement)
     })
   })
-  console.log(basketArr)
+
   return basketProduct
 }

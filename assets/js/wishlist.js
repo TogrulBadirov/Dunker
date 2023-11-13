@@ -3,7 +3,6 @@ let wishListContainer = document.querySelector('.wishlist-items')
 //Create WishList Product Card
 function generateWishlistCard(wishListLoc) {
   wishListLoc.forEach(product => {
-    console.log(product.id)
     let card = document.createElement('div')
     card.classList.add('wishlist-item')
     card.innerHTML = `
@@ -69,33 +68,42 @@ function generateWishlistCard(wishListLoc) {
     })
 
     addToBasketFromWishList.addEventListener('click', () => {
-      let indexOfProduct = bascetArr.findIndex(x => x.id === product.id)
+      if (product.status !== 'sold') {
+        let indexOfProduct = bascetArr.findIndex(x => x.id === product.id)
 
-      if (indexOfProduct >= 0) {
-        bascetArr[indexOfProduct].count++
+        if (indexOfProduct >= 0) {
+          bascetArr[indexOfProduct].count++
+        } else {
+          product.count = 1
+          bascetArr.push(product)
+        }
+        basketProducts.innerHTML = ''
+        bascetArr.forEach(element => {
+          let basketElement = generateBasketElements(element)
+          basketProducts.appendChild(basketElement)
+        })
+
+        countBasket.forEach(item => {
+          item.innerHTML = calculateBasketcount()
+        })
+        basketTotal.innerHTML = '$' + calculateSubTotal()
+        localStorage.setItem('basket', JSON.stringify(bascetArr))
+        Swal.fire({
+          icon: 'success',
+          title: 'Added to Basket',
+          text: `${element.title} has been added to your basket.`,
+          showConfirmButton: false,
+          timer: 1500
+        })
       } else {
-        product.count = 1
-        bascetArr.push(product)
+        Swal.fire({
+          icon: 'error',
+          title: 'Out of Stock',
+          text: `${product.title} is out of stock and cannot be added to the basket.`,
+          showConfirmButton: false,
+          timer: 2000
+        })
       }
-      basketProducts.innerHTML = ''
-      bascetArr.forEach(element => {
-        let basketElement = generateBasketElements(element)
-        basketProducts.appendChild(basketElement)
-      })
-
-      countBasket.forEach(item => {
-        item.innerHTML = calculateBasketcount()
-      })
-      basketTotal.innerHTML = '$' + calculateSubTotal()
-
-      localStorage.setItem('basket', JSON.stringify(bascetArr))
-      Swal.fire({
-        icon: 'success',
-        title: 'Added to Basket',
-        text: `${element.title} has been added to your basket.`,
-        showConfirmButton: false,
-        timer: 1500
-      })
     })
 
     wishListContainer.appendChild(card)
@@ -192,7 +200,6 @@ function addToCardFromWishList(product) {
       basketProducts.appendChild(basketElement)
     })
   })
-  console.log(basketArr)
   return basketProduct
 }
 
